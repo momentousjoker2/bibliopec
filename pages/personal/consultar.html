@@ -104,6 +104,7 @@
               <span class="menu-title">talleres</span>
               <i class="menu-arrow"></i>
             </a>
+
             <div class="collapse" id="ui-talleres">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
@@ -197,7 +198,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Nombre</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" disabled>
                       </div>
                     </div>
                   </div>
@@ -205,7 +206,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Apellidos</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" disabled>
                       </div>
                     </div>
                   </div>
@@ -216,7 +217,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Curp</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" disable>
                       </div>
                     </div>
                   </div>
@@ -224,7 +225,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">RFC</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control">
+                        <input type="text" disabled class="form-control">
                       </div>
                     </div>
                   </div>
@@ -235,7 +236,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label" for="fechainicio">Fecha de nacimiento</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                        <input type="date" class="form-control" autocomplete="off" disabled >
                       </div>
                     </div>
                   </div>
@@ -246,7 +247,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Fecha de inicio laborar </label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                        <input type="date" class="form-control" autocomplete="off" disabled  >
                       </div>
                     </div>
                   </div>
@@ -254,27 +255,27 @@
 
                 <div class="form-group">
                   <label for="nombre-taller">Direccion</label>
-                  <input type="text" class="form-control" autocomplete="off" >
+                  <input type="text" class="form-control" autocomplete="off" disabled  >
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudada</label>
-                  <input type="text" class="form-control" autocomplete="off" >
+                  <input type="text" class="form-control" autocomplete="off" disabled  >
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Codigo Postal</label>
-                  <input type="text" class="form-control" autocomplete="off" >
+                  <input type="text" class="form-control" autocomplete="off" disabled  >
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Telefono fijo</label>
-                  <input type="tel" class="form-control" autocomplete="off" >
+                  <input type="tel" class="form-control" autocomplete="off" disabled  >
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Telefono celular</label>
-                  <input type="tel" class="form-control" autocomplete="off" >
+                  <input type="tel" class="form-control" autocomplete="off" disabled  >
                 </div>
 
                 <div class="row">
@@ -282,7 +283,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de entrada</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control">
+                        <input disabled type="time" class="form-control">
                       </div>
                     </div>
                   </div>
@@ -290,14 +291,11 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de salida</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control">
+                        <input disabled type="time" class="form-control">
                       </div>
                     </div>
                   </div>
-                </div> 
-
-                <button type="submit" class="btn btn-success mr-2">Guardar</button>
-                <button class="btn btn-light">Cancel</button>
+                </div>
               </form>
             </div>
           </div>
@@ -312,7 +310,7 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"> </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"> </script>
 </body>
 
