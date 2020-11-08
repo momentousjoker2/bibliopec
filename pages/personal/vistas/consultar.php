@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Bibloteca</title>
+  <title>Biblioteca</title>
   <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../../../assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
   <link rel="stylesheet" href="../../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
@@ -165,7 +165,7 @@
                 <div class="form-row">
                   <div class="col-md-3 mb-3">
                     <label for="validationDefault04">Mes</label>
-                    <select class="custom-select" id="validationDefault04" required>
+                    <select class="custom-select" id="validationDefault04" name="mes" required>
                       <option selected disabled value="">...</option>
                       <option>Enero</option>
                       <option>Febrero</option>
@@ -182,20 +182,22 @@
                     </select>  
                   </div>
                   <div class="col-md-3 mb-3">
-                    <label for="validationDefault05">Año</label>
-                    <select class="custom-select" id="validationDefault05" required>
+                    <label for="validationDefault05">Años</label>
+                    <select class="custom-select" id="validationDefault05" name="ann" required>
                       <option selected disabled value="">...</option>
-                      <option>2015</option>
-                      <option>2016</option>
-                      <option>2017</option>
-                      <option>2018</option>
-                      <option>2019</option>
-                      <option>2020</option>
+                      <?php
+                        date_default_timezone_set('America/Mexico_City');
+                        $fecha = getdate();
+                        $lim = intval($fecha['year']);
+                        for ($i = 2000; $i <= $lim; $i++) {
+                          echo "<option value='$i'>$i</option>";
+                        }
+                      ?>
                     </select>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="validationDefault03" style="opacity: 0;">l</label><br>
-                    <button class="btn btn-primary" type="submit" id="validationDefault03">Buscar Visita</button>
+                    <button class="btn btn-primary" type="button" id="btnBuscar">Buscar Visita</button>
                   </div>
                 </div>
               </form>
@@ -213,62 +215,8 @@
                     <th scope="col">Genero</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>27/10/2020</td>
-                    <td>13:30</td>
-                    <td>Generala</td>
-                    <td>10</td>
-                    <td>Royal Cantero Luis Mauricio </td>
-                    <td>Preparatoria</td>
-                    <td>Estudiante</td>
-                    <td>Masculino</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>28/10/2020</td>
-                    <td>10:50</td>
-                    <td>Ninguna</td>
-                    <td>3</td>
-                    <td>Figueroa García Manuel Everardo</td>
-                    <td>Licenciatura</td>
-                    <td>Estudiante</td>
-                    <td>Masculino</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                <tbody id='tbody'>
+
                 </tbody>
               </table>
             </div>
@@ -287,5 +235,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"> </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"> </script>
 </body>
-
+<script>
+  function tabla() {
+    var ann=$('select[name="ann"] option:selected').text());
+    var mes=$("select[name='mes'] option:selected").index() 
+    $.ajax({
+      url: 'datos.php',
+      type: 'POST',
+      data: "mes="+mes+"&ann="+ann,
+      success: function (res) {
+        var js = JSON.parse(res);
+        var tabla;
+        for (let i = 0; i < js.length; i++) {
+          tabla += '<tr><td>'+js[i].idVisita+'</td><td>'+js[i].fecha+'</td><td>'+js[i].hora+'</td><td>'+js[i].mConsulta+'</td><td>'+js[i].idUsuario+'</td><td>'+js[i].Nombre+' 'js[i].Apellido+'</td><td>'+js[i].escolaridad+'</td><td>'+js[i].ocupacion+'</td><td>'+js[i].genero+'</td></tr>';
+        }
+        $('#tbody').html(tabla);
+      }
+    });
+  }
+  $('#btnBuscar').click(function(){
+    tabla();
+    
+  });
+</script>
 </html>
