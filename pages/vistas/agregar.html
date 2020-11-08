@@ -185,11 +185,11 @@
                 <h4 class="card-title">REGISTRO DE VISITAS</h4>
                 <p class="card-description">Ingrese sus Datos </p>
               </center>
-                <form class="forms-sample">
+                <form class="forms-sample" method='post' action='grabar.php'>
                   <div class="form-row">
                     <div class="col-md-2 mb-3">
                       <label for="validationDefault01">idUsuario</label>
-                      <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+                      <input type="text" class="form-control" id="validationDefault01" value="Mark" name="idUsuario" required>
                     </div>
                     <div class="col-md-5 mb-3">
               <label for="validationDefault01">Nombres</label>
@@ -227,7 +227,7 @@
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="validationDefault05">Material</label>
-              <select class="custom-select" id="validationDefault04" required>
+              <select class="custom-select" id="validationDefault04" name="mConsulta" required>
                 <option selected disabled value="">Ninguno</option>
                 <option value="Coleccion consulta">Colección consulta</option>
                 <option value="Coleccion general">Colección general</option>
