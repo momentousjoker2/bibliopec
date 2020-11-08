@@ -234,28 +234,26 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"> </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"> </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </body>
 <script>
   function tabla() {
-    var ann=$('select[name="ann"] option:selected').text());
-    var mes=$("select[name='mes'] option:selected").index() 
+    var ann=$('select[name="ann"] option:selected').text();
+    var mes=$("select[name='mes'] option:selected").index();
+    
     $.ajax({
       url: 'datos.php',
       type: 'POST',
       data: "mes="+mes+"&ann="+ann,
-      success: function (res) {
-        var js = JSON.parse(res);
-        var tabla;
-        for (let i = 0; i < js.length; i++) {
-          tabla += '<tr><td>'+js[i].idVisita+'</td><td>'+js[i].fecha+'</td><td>'+js[i].hora+'</td><td>'+js[i].mConsulta+'</td><td>'+js[i].idUsuario+'</td><td>'+js[i].Nombre+' 'js[i].Apellido+'</td><td>'+js[i].escolaridad+'</td><td>'+js[i].ocupacion+'</td><td>'+js[i].genero+'</td></tr>';
-        }
-        $('#tbody').html(tabla);
+      success: function (res) { 
+          
+        $('#tbody').html(res);
+        
       }
     });
   }
-  $('#btnBuscar').click(function(){
-    tabla();
-    
+  $('#btnBuscar').click(function(){ 
+    tabla();  
   });
 </script>
 </html>
