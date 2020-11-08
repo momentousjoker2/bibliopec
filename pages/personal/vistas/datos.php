@@ -5,6 +5,44 @@
     if ($mes == '...' || $ann =='...') {
         echo 'Asigne ambos campos';
     }else{
+        switch ($mes) {
+            case "Enero":
+                $mes =1;
+                break;
+            case "Febrero":
+                $mes =2;
+            break;
+            case "Marzo":
+                $mes =3;
+                break;
+            case "Abril":
+                $mes =4;
+            break;
+            case "Mayo":
+                $mes =5;
+                break;
+            case "Junio":
+                $mes =6;
+            break;
+            case "Julio":
+                $mes =7;
+            break;
+            case "Agosto":
+                $mes =8;
+            break;
+            case "Septiembre":
+                $mes =9;
+            break;
+            case "Octubre":
+                $mes =10;
+            break;
+            case "Noviembre":
+                $mes =11;
+            break;
+            case "Diciembre":
+                $mes =12;
+            break;
+        }
     $instruccion ="Select V.idVisitas, V.fecha, V.Hora, V.mConsulta, U.idUsuario, 
     U.Apellidos, U.Nombre, U.Escolaridad, U.Ocupacion, U.Genero 
     from visitas As V Inner join USUARIOS AS U ON V.idUsuario = U.idUsuario 
