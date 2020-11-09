@@ -48,7 +48,7 @@
     from visitas As V Inner join USUARIOS AS U ON V.idUsuario = U.idUsuario 
     WHERE MONTH(V.fecha) =" . $mes . " AND YEAR(V.fecha) =".$ann;
     
-    $sql=mysqli_query($enlace,$instruccion);
+    $sql=mysqli_query($conn,$instruccion);
     while ($dat = mysqli_fetch_assoc($sql)) {
         
         echo '<tr><td>'.$dat['idVisitas'].'</td><td>'.$dat['fecha'].'</td><td>'.$dat['Hora'].'</td><td>'.$dat['mConsulta'].'</td><td>'.$dat['idUsuario'].'</td><td>'.$dat['Apellidos'].' '.$dat['Nombre'].'</td><td>'.$dat['Escolaridad'].'</td><td>'.$dat['Ocupacion'].'</td><td>'.$dat['Genero'].'</td></tr>';       
