@@ -169,7 +169,7 @@
                   <div class="card-body">
                     <h4 class="card-title">REGISTRO DE USUARIOS</h4>
                     <p class="card-description">Ingrese sus Datos </p>
-                    <form class="forms-sample">
+                    <form class="forms-sample" method="post" action="agregar.php">
                       <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault01">Nombre</label>
@@ -235,9 +235,10 @@
 		  $e = $_POST['CP'];
 		  $f = $_POST['GradoEstudios'];
 		  $sql = "INSERT INTO usuario (Nombre, Fecha_Nacimiento, Domicilio, Ciudad, CP, GradoEstudios) VALUES ('$a','$b','$c','$d','$e','$f')";
-		  echo $sql;
-		mysqli_query( $conn, $sql );
-		mysqli_close( $conn );
+		  mysqli_query( $conn, $sql );
+		  mysqli_close( $conn );
+		  //header('Location: ..\..\personal\usuario\agregar.php');
+		  
 	  }
     
 		?>
@@ -498,5 +499,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
->>>>>>> Stashed changes:pages/usuario/agregar.php
+>>>>>>> Stashed changes:pages/personal/agregar.php
 </html>
