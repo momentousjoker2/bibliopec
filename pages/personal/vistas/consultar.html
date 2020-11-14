@@ -185,14 +185,7 @@
                     <label for="validationDefault05">Años</label>
                     <select class="custom-select" id="validationDefault05" name="ann" required>
                       <option selected disabled value="">...</option>
-                      <?php
-                        date_default_timezone_set('America/Mexico_City');
-                        $fecha = getdate();
-                        $lim = intval($fecha['year']);
-                        for ($i = 2000; $i <= $lim; $i++) {
-                          echo "<option value='$i'>$i</option>";
-                        }
-                      ?>
+                      
                     </select>
                   </div>
                   <div class="col-md-3 mb-3">
@@ -236,6 +229,16 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"> </script>
 </body>
 <script>
+  const valor = new Date().getFullYear()
+ var op = document.getElementById('validationDefault05');
+
+for(let i=2000; i<= valor; i++){
+	let option = document.createElement('option');
+  	option.value = i;
+  	option.text = i;
+  	op.appendChild(option);
+}
+
   var formulario=document.getElementById('formulario');
     formulario.addEventListener('submit', function(e){
       e.preventDefault();
