@@ -185,58 +185,55 @@
                 <h4 class="card-title">REGISTRO DE VISITAS</h4>
                 <p class="card-description">Ingrese sus Datos </p>
               </center>
-                <form class="forms-sample" method='post' action='grabar.php'>
-                  <div class="form-row">
-                    <div class="col-md-2 mb-3">
-                      <label for="validationDefault01">idUsuario</label>
-                      <input type="text" class="form-control" id="validationDefault01" value="Mark" name="idUsuario" required>
-                    </div>
-                    <div class="col-md-5 mb-3">
-              <label for="validationDefault01">Nombres</label>
-              <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
-            </div>
-            <div class="col-md-5 mb-3">
-              <label for="validationDefault02">Apellidos</label>
-              <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
-            </div>
+              <form class="forms-sample" id='formulario'>
+                <div class="form-row">
+                  <div class="col-md-2 mb-3">
+                    <label for="validationDefault00">idUsuario</label>
+                    <input type="number" class="form-control" id="validationDefault00"  name="idUsuario" required>
+                  </div>
+                  <div class="col-md-5 mb-3">
+            <label for="validationDefault01">Nombres</label>
+            <input type="text" class="form-control" id="validationDefault01" name='nombre' readonly required>
           </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault03">Edad</label>
-              <input type="text" class="form-control" id="validationDefault03" required>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationDefault04">Genero</label>
-              <select class="custom-select" id="validationDefault04" required>
-                <option selected disabled value=""></option>
-                <option>Masculino</option>
-                <option>Femenino</option>
-              </select>
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="validationDefault05">Ocupacion</label>
-              <select class="custom-select" id="validationDefault04" required>
-                <option selected disabled value=""></option>
-                <option>Hogar</option>
-                <option>Estudiante</option>
-                <option>Trabajador</option>
-                <option>Desocupado</option>
-              </select>
-            </div>
+          <div class="col-md-5 mb-3">
+            <label for="validationDefault02">Apellidos</label>
+            <input type="text" class="form-control" id="validationDefault02"  readonly required>
           </div>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault05">Material</label>
-              <select class="custom-select" id="validationDefault04" name="mConsulta" required>
-                <option selected disabled value="">Ninguno</option>
-                <option value="Coleccion consulta">Colección consulta</option>
-                <option value="Coleccion general">Colección general</option>
-                <option value="Coleccion infantil">Colección infantil</option>
-              </select>
-            </div>
+        </div>
+        <div class="form-row">
+        
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Genero</label>
+            <select class="custom-select" id="validationDefault04" disabled required>
+              <option selected disabled value=""></option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
           </div>
-          <button class="btn btn-primary" type="submit">Registrar Visita</button>
-                </form>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault05">Ocupacion</label>
+            <select class="custom-select" id="validationDefault05" disabled required>
+              <option selected disabled value=""></option>
+              <option value ="Hogar">Hogar</option>
+              <option value ="Estudiante">Estudiante</option>
+              <option value ="Trabajador">Trabajador</option>
+              <option value ="Desocupado">Desocupado</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault06">Material</label>
+            <select class="custom-select" id="validationDefault06" name="mConsulta" required>
+              <option selected disabled value="">Ninguno</option>
+              <option value="Consulta">Colección consulta</option>
+              <option value="General">Colección general</option>
+              <option value="Infantil">Colección infantil</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Registrar Visita</button>
+              </form>
               </div>
             </div>  
 
@@ -255,4 +252,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
+  <script>
+    var formulario=document.getElementById('formulario');
+    formulario.addEventListener('submit', function(e){
+      e.preventDefault();
+      let datos = new FormData(formulario);
+      fetch('grabar.php',{
+      method: 'POST',
+      body: datos
+  })
+  .then(response =>response.text())
+  .then(data =>{
+      
+      alert(data);
+  });
+    });
+    var idUsuario = document.getElementById('validationDefault00');
+    idUsuario.addEventListener('keyup', function(e){
+        let nombre = document.getElementById('validationDefault01');
+        nombre.value ='';
+        e.preventDefault();
+        let datos = new FormData(formulario);
+      fetch('grabar.php',{
+      method: 'POST',
+      body: datos
+  })
+  .then(response =>response.text())
+  .then(data =>{
+    let arr=data.split(',');
+    let apellido = document.getElementById('validationDefault02');
+    let nombre = document.getElementById('validationDefault01');
+    let genero = document.getElementById('validationDefault04');
+    let ocupacion = document.getElementById('validationDefault05');
+    if (arr.length >1) { 
+       apellido.value=arr[1];
+       nombre.value=arr[2];
+       genero.value=arr[5]
+       ocupacion.value=arr[4]
+    }else{
+        apellido.value='';
+        nombre.value='';
+        genero.value='';
+        ocupacion.value='';
+    }
+      
+  });
+    });
+</script>
 </html>
