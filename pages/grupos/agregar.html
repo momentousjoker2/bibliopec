@@ -194,7 +194,7 @@
                   <div class="col-md-3 mb-3">
             <label for="validationDefault04">Taller</label>
             <select class="custom-select" id="validationDefault04" name='Taller' required>
-              <option selected disabled value=""></option>  
+              <option selected disabled value="1"></option>  
             </select>
           </div>
           <div class="col-md-3 mb-3">
@@ -202,8 +202,8 @@
             <input type="text" class="form-control" id="validationDefault02" name='Escuela'  required>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="validationDefault04">Nombre del encargado</label>
-            <input type="text" class="form-control" id="validationDefault04" name='Encargado'  required>
+            <label for="validationDefault01">Nombre del encargado</label>
+            <input type="text" class="form-control" id="validationDefault01" name='Encargado'  required>
           </div>
         </div>
         <button class="btn btn-primary" type="submit">Registrar Visita</button>
@@ -227,15 +227,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
   <script>
+    var sl = document.getElementById('validationDefault04');
       function talleres() {
         fetch('mTalleres.php',{
       method: 'GET'
       }).then(response =>response.text())
       .then(data =>{
-        let sl = document.getElementById('validationDefault04');
         sl.innerHTML = data;
       });
       }
       talleres();
+      sl.addEventListener('input',function(e) {
+        let idTaller = document.getElementById('validationDefault00');
+        let selectedOption = this.options[sl.selectedIndex];
+        idTaller.value = selectedOption.value;
+      });
+      var formulario=document.getElementById('formulario');
+    formulario.addEventListener('submit', function(e){
+      e.preventDefault();
+      let datos = new FormData(formulario);
+      fetch('grabar.php',{
+      method: 'POST',
+      body: datos
+  })
+  .then(response =>response.text())
+  .then(data =>{
+      
+      alert(data);
+      let esc = document.getElementById('validationDefault02');
+      esc.value ="";
+      let enc = document.getElementById('validationDefault01');
+      enc.value ="";
+  });
+    });
   </script>
 </html>
