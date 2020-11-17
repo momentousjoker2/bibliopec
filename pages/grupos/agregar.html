@@ -179,7 +179,37 @@
         <div class="main-panel">
           <div class="content-wrapper"> 
 
-            <h2>aqui va su formulario</h2>
+            <div class="card">
+              <div class="card-body">
+                <center>
+                <h4 class="card-title">REGISTRO DE GRUPOS</h4>
+                <p class="card-description">Ingrese datos del grupo</p>
+              </center>
+              <form class="forms-sample" id='formulario'>
+                <div class="form-row">
+                  <div class="col-md-2 mb-3">
+                    <label for="validationDefault00">idTaller</label>
+                    <input type="number" class="form-control" id="validationDefault00"  name="idTaller" readonly required>
+                  </div>
+                  <div class="col-md-3 mb-3">
+            <label for="validationDefault01">Taller</label>
+            <select class="custom-select" id="validationDefault04" name='Taller' required>
+              <option selected disabled value=""></option>  
+            </select>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault02">Escuela</label>
+            <input type="text" class="form-control" id="validationDefault02" name='Escuela'  required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Nombre del encargado</label>
+            <input type="text" class="form-control" id="validationDefault01" name='Encargado'  required>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Registrar Visita</button>
+              </form>
+              </div>
+            </div> 
 
           </div>
 
