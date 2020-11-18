@@ -204,7 +204,7 @@
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="validationDefault01">idUsuario</label>
-                    <input type="text" class="form-control" id="validationDefault01" name='idUsuario' disabled required>
+                    <input type="text" class="form-control" id="validationDefault01" name='idUsuario' readonly required>
                   </div>
                   <div class="col-md-5 mb-3">
                     <label for="validationDefault02">Nombre</label>
@@ -255,7 +255,47 @@
     crossorigin="anonymous"></script>
 </body>
 <script>
+      var slU = document.getElementById('validationDefault02');
+      var slG = document.getElementById('validationDefault00');
+      function grupos() {
+        fetch('mGrupo.php',{
+      method: 'GET'
+      }).then(response =>response.text())
+      .then(data =>{
+        slG.innerHTML = data;
+      });
+      }
+      function usuarios() {
+        fetch('mUsuario.php',{
+      method: 'GET'
+      }).then(response =>response.text())
+      .then(data =>{
+        slU.innerHTML = data;
+      });
+      }
+      usuarios();
+      grupos()
+      slU.addEventListener('input',function(e) {
+        let idUsuario = document.getElementById('validationDefault01');
+        let selectedOption = this.options[slU.selectedIndex];
+        idUsuario.value = selectedOption.value;
+      });
 
+      var formulario=document.getElementById('formulario');
+    formulario.addEventListener('submit', function(e){
+      e.preventDefault();
+      let datos = new FormData(formulario);
+      fetch('grabarU.php',{
+      method: 'POST',
+      body: datos
+  })
+  .then(response =>response.text())
+  .then(data =>{
+      alert(data);
+      let esc = document.getElementById('validationDefault03');
+      esc.value ="";
+  });
+    });
 </script>
 
 </html>
