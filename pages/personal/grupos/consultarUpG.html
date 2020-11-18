@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Bibloteca</title>
-    <link rel="stylesheet" href="../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-    <link rel="stylesheet" href="../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.addons.css">
-    <link rel="stylesheet" href="../../assets/css/shared/style.css">
-    <link rel="stylesheet" href="../../assets/css/demo_1/style.css">
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="../../../assets/css/shared/style.css">
+    <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
     <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
   </head>
   <body>
@@ -47,7 +47,7 @@
           <ul class="nav">
             <li class="nav-item nav-category">Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link " href="../../index.html">
+              <a class="nav-link " href="../../../index.html">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title disabled">Dashboard</span>
               </a>
@@ -81,7 +81,7 @@
               <div class="collapse" id="ui-permisos">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item" >
-                    <a class="nav-link " href="../../pages/permisos/agregar.html">Agregar</a>
+                    <a class="nav-link " href="../../permisos/agregar.html">Agregar</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="../../pages/permisos/modificar.html">modificar</a>
@@ -122,13 +122,13 @@
               <div class="collapse" id="ui-grupos">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="../../pages/grupos/agregar.html">Agregar</a>
+                    <a class="nav-link disabled" aria-disabled="true" href="agregar.html">Agregar</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="../../pages/grupos/modificar.html">modificar</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../../pages/grupos/consultar.html">consultar</a>
+                    <a class="nav-link" href="consultar.html">consultar</a>
                   </li>
                 </ul>
               </div>
@@ -145,7 +145,7 @@
                     <a class="nav-link " href="../../pages/usuario/agregar.html">Agregar</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../../pages/usuario/modificar.html">modificar</a>
+                    <a class="nav-link" href="../../usuario/modificar.html">modificar</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="../../pages/usuario/consultar.html">consultar</a>
@@ -162,7 +162,7 @@
               <div class="collapse" id="ui-Visitas">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true" href="../../pages/vistas/agregar.html">Agregar</a>
+                    <a class="nav-link " href="../vistas/agregar.html">Agregar</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="../../pages/vistas/modificar.html">modificar</a>
@@ -182,61 +182,40 @@
             <div class="card">
               <div class="card-body">
                 <center>
-                <h4 class="card-title">REGISTRO DE VISITAS</h4>
-                <p class="card-description">Ingrese sus Datos </p>
+                <h4 class="card-title">CONSULTAR USUARIOS POR GRUPOS</h4>
               </center>
               <form class="forms-sample" id='formulario'>
                 <div class="form-row">
-                  <div class="col-md-2 mb-3">
-                    <label for="validationDefault00">idUsuario</label>
-                    <input type="number" class="form-control" id="validationDefault00"  name="idUsuario" required>
+                  
+                  <div class="col-md-3 mb-3">
+                    <label for="validationDefault05">Grupos</label>
+                    <select class="custom-select" id="validationDefault05" name="idGrupo" required>
+                      <option selected disabled value="">...</option>
+                      
+                    </select>
                   </div>
-                  <div class="col-md-5 mb-3">
-            <label for="validationDefault01">Nombres</label>
-            <input type="text" class="form-control" id="validationDefault01" name='nombre' readonly required>
-          </div>
-          <div class="col-md-5 mb-3">
-            <label for="validationDefault02">Apellidos</label>
-            <input type="text" class="form-control" id="validationDefault02"  readonly required>
-          </div>
-        </div>
-        <div class="form-row">
-        
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault04">Genero</label>
-            <select class="custom-select" id="validationDefault04" disabled required>
-              <option selected disabled value=""></option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-            </select>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault05">Ocupacion</label>
-            <select class="custom-select" id="validationDefault05" disabled required>
-              <option selected disabled value=""></option>
-              <option value ="Hogar">Hogar</option>
-              <option value ="Estudiante">Estudiante</option>
-              <option value ="Trabajador">Trabajador</option>
-              <option value ="Desocupado">Desocupado</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault06">Material</label>
-            <select class="custom-select" id="validationDefault06" name="mConsulta" required>
-              <option selected disabled value=""></option>
-              <option value="Ninguna">Ninguna</option>
-              <option value="Consulta">Colección consulta</option>
-              <option value="General">Colección general</option>
-              <option value="Infantil">Colección infantil</option>
-            </select>
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Registrar Visita</button>
+                  <div class="col-md-3 mb-3">
+                    <label for="validationDefault03" style="opacity: 0;">l</label><br>
+                    <button class="btn btn-primary" type="submit" id="btnBuscar">Buscar</button>
+                  </div>
+                </div>
               </form>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">idUsuario</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Escolaridad</th>
+                    <th scope="col">Ocupación</th>
+                  </tr>
+                </thead>
+                <tbody id='tbody'>
+
+                </tbody>
+              </table>
               </div>
-            </div>  
+            </div> 
 
           </div>
 
@@ -254,50 +233,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
   <script>
-    var formulario=document.getElementById('formulario');
+    var slG = document.getElementById('validationDefault05');
+      function grupos() {
+        fetch('mGrupo.php',{
+      method: 'GET'
+      }).then(response =>response.text())
+      .then(data =>{
+        slG.innerHTML = data;
+      });
+      }
+      grupos();
+      var formulario=document.getElementById('formulario');
     formulario.addEventListener('submit', function(e){
       e.preventDefault();
-      let datos = new FormData(formulario);
-      fetch('grabar.php',{
+      var datos = new FormData(formulario);
+      fetch('conUpG.php',{
       method: 'POST',
       body: datos
   })
   .then(response =>response.text())
   .then(data =>{
       
-      alert(data);
+      var tb= document.getElementById('tbody');
+      tb.innerHTML = data;
   });
     });
-    var idUsuario = document.getElementById('validationDefault00');
-    idUsuario.addEventListener('input', function(e){
-        let nombre = document.getElementById('validationDefault01');
-        nombre.value ='';
-        e.preventDefault();
-        let datos = new FormData(formulario);
-      fetch('grabar.php',{
-      method: 'POST',
-      body: datos
-  })
-  .then(response =>response.text())
-  .then(data =>{
-    let arr=data.split(',');
-    let apellido = document.getElementById('validationDefault02');
-    let nombre = document.getElementById('validationDefault01');
-    let genero = document.getElementById('validationDefault04');
-    let ocupacion = document.getElementById('validationDefault05');
-    if (arr.length >1) { 
-       apellido.value=arr[1];
-       nombre.value=arr[2];
-       genero.value=arr[5]
-       ocupacion.value=arr[4]
-    }else{
-        apellido.value='';
-        nombre.value='';
-        genero.value='';
-        ocupacion.value='';
-    }
-      
-  });
-    });
-</script>
+  </script>
 </html>
