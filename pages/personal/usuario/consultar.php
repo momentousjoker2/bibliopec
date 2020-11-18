@@ -177,14 +177,10 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault01">Nombre</label>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationDefault01">Nombre Completo</label>
                                         <input type="text" class="form-control" name="Nombre" value="Mark" maxlength="35" disabled required>
                                     </div>
-									<div class="col-md-6 mb-3">
-										<label for="validationDefault02">Apellidos</label>
-                  						<input type="text" class="form-control" name="Apellido" maxlength="30" required disabled>
-                					</div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
@@ -204,10 +200,18 @@
                                         <input type="text" class="form-control" name="FechaNacimiento" disabled required>
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label for="validationDefault03">Grado de Estudios</label>
                                             <input type="text" class="form-control" name="GradoEstudios" disabled required>
                                         </div>
+										<div class="col-md-4 mb-3">
+											<label for="validationDefault02">Genero</label>
+                  							<input type="text" class="form-control" name="Genero" maxlength="30" required disabled>
+                						</div>
+										<div class="col-md-4 mb-3">
+											<label for="validationDefault02">Ocupacion</label>
+                  							<input type="text" class="form-control" name="Ocupacion" maxlength="30" required disabled>
+                						</div>
                                     </div>
                                 </div>
                             </form>
@@ -229,8 +233,8 @@
 			$r=mysqli_query($conn,$sql);
 			$row=mysqli_fetch_array($r);
 			if(mysqli_num_rows($r)==1){
-				//echo "Si existe el cliente <br>";
-				$a =$row[0];$b =$row[1];$aa=$row[2];$c=$row[3];$d=$row[4];$e=$row[5];$f=$row[6];$g=$row[7];
+				//INSERT INTO `usuario`(`ID`, `Nombre`, `password`, `Domicilio`, `Ciudad`, `CP`, `Genero`, `Ocupacion`, `GradoEstudios`, `Fecha_Nacimiento`)
+				$id =$row[0];$a =$row[1];$b=$row[3];$c=$row[4];$d=$row[5];$e=$row[6];$f=$row[7];$g=$row[8];$h=$row[9];
 				echo '
         <div class="main-panel">
             <div class="content-wrapper">
@@ -245,44 +249,48 @@
                                         <label for="id">ID Usuario:</label>
                                     </div>
                                     <div class="col-md-2 mb-3">
-                                        <input type="text" class="form-control" name="id" required value='.$a.'>
+                                        <input type="text" class="form-control" name="id" required value='.$id.'>
                                     </div>
                                     <div class="col-md-2 mb-3">
                                         <input class="btn btn-primary" type="submit" id="Busca" value="Buscar!" style="color: white; margin-left: 18%; font-size:large;">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault01">Nombre</label>
-                                        <input type="text" class="form-control" name="Nombre" value='.$b.' maxlength="35" disabled required>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationDefault01">Nombre Completo</label>
+                                        <input type="text" class="form-control" name="Nombre" value='.$a.' maxlength="35" disabled required>
                                     </div>
-									<div class="col-md-6 mb-3">
-										<label for="validationDefault02">Apellidos</label>
-                  						<input type="text" class="form-control" name="Apellido" maxlength="30" required disabled value='.$aa.'>
-                					</div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
                                         <label for="validationDefault03">Domicilio</label>
-                                        <input type="text" class="form-control" name="Domicilio" disabled  required value='.$d.'>
+                                        <input type="text" class="form-control" name="Domicilio" disabled  required value='.$b.'>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Ciudad</label>
-                                        <input type="text" class="form-control" name="Ciudad" disabled required value='.$e.'>
+                                        <input type="text" class="form-control" name="Ciudad" disabled required value='.$c.'>
                                     </div>
                                     <div class="col-md-1 mb-3">
                                         <label for="validationDefault03">CP</label>
-                                        <input type="text" class="form-control" name="CP" disabled required value='.$f.'>
+                                        <input type="text" class="form-control" name="CP" disabled required value='.$d.'>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="validationDefault03">Fecha de Nacimiento</label>
-                                        <input type="text" class="form-control" name="FechaNacimiento" disabled required value='.$c.'>
+                                        <input type="text" class="form-control" name="FechaNacimiento" disabled required value='.$h.'>
                                     </div>
                                     <div class="form-row">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label for="validationDefault03">Grado de Estudios</label>
                                             <input type="text" class="form-control" name="GradoEstudios" disabled required value='.$g.'>
                                         </div>
+										<div class="col-md-4 mb-3">
+											<label for="validationDefault02">Genero</label>
+                  							<input type="text" class="form-control" name="Genero" maxlength="30" required disabled value='.$e.'>
+                						</div>
+										<div class="col-md-4 mb-3">
+											<label for="validationDefault02">Ocupacion</label>
+                  							<input type="text" class="form-control" name="Ocupacion" maxlength="30" required disabled value='.$f.'>
+                						</div>
                                     </div>
                                 </div>
                             </form>

@@ -191,13 +191,26 @@
 				  <div class="col-md-1 mb-3">
                   <label for="validationDefault03">CP</label>
                   <input type="text" class="form-control" name="CP" required>
+                </div></div>
+				<div class="form-row">
+				<div class="col-md-4 mb-3">
+                  <label for="validationDefault03">Password</label>
+                  <input type="password" class="form-control" name="password" required>
                 </div>
 				  <div class="col-md-3 mb-3">
                   <label for="validationDefault03">Fecha de Nacimiento</label>
                   <input type="date" class="form-control" name="FechaNacimiento"  required>
                 </div>
+				<div class="col-md-4 mb-3">
+                  <label for="validationDefault05">Genero</label>
+                  <select class="custom-select" id="Genero" name="Genero" required>
+                    <option selected disabled value=""></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                  </select>
+                </div>
 				  <div class="form-row">
-                <div class="col-md-7 mb-3">
+                <div class="col-md-6 mb-3">
                   <label for="validationDefault05">Grado de Estudios</label>
                   <select class="custom-select" id="GradoEstudios" name="GradoEstudios" required>
                     <option selected disabled value=""></option>
@@ -208,6 +221,11 @@
 					  <option value="Universidad">Universidad</option>
                   </select>
                 </div>
+				<div class="col-md-6 mb-3">
+                  <label for="validationDefault03">Ocupacion</label>
+                  <input type="text" class="form-control" name="Ocupacion" required>
+                </div>
+				
               </div>
               </div>
               
@@ -229,15 +247,18 @@
 	  }else{
 		$a = $_POST['Nombre'];
 		  $ap = $_POST['Apellido'];
-		  $b = $_POST['FechaNacimiento'];
+		  $b = $_POST['password'];	  
 		  $c = $_POST['Domicilio'];
 		  $d = $_POST['Ciudad'];
 		  $e = $_POST['CP'];
-		  $f = $_POST['GradoEstudios'];
+		  $f = $_POST['Genero'];
+		  $g = $_POST['Ocupacion'];
+		  $h = $_POST['GradoEstudios'];
+		  $i = $_POST['FechaNacimiento'];
 		  $na = $a." ".$ap;
-		  $sql = "INSERT INTO usuario (Nombre, Fecha_Nacimiento, Domicilio, Ciudad, CP, GradoEstudios) VALUES ('$na','$b','$c','$d','$e','$f')";
+		  $sql = "INSERT INTO usuario(`Nombre`, `password`, `Domicilio`, `Ciudad`, `CP`, `Genero`, `Ocupacion`, `GradoEstudios`, `Fecha_Nacimiento`) VALUES ('$na','$b','$c','$d','$e','$f','$g','$h','$i')";
 		  mysqli_query( $conn, $sql );
-		  $sql = "Select ID from usuario where Nombre='".$na."' AND Fecha_Nacimiento='".$b."'";
+		  $sql = "Select ID from usuario where Nombre='".$na."' AND Fecha_Nacimiento='".$i."'";
 		  echo 'alert("'.$sql.'")';			
 		  $r=mysqli_query($conn,$sql);
 			$row=mysqli_fetch_array($r);
