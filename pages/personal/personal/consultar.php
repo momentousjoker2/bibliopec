@@ -307,7 +307,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Nombre</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" disabled value='.$a.'>
+                        <input type="text" class="form-control" disabled value="'.$a.'">
                       </div>
                     </div>
                   </div>
@@ -315,7 +315,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Apellidos</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" disabled value='.$c.'>
+                        <input type="text" class="form-control" disabled value="'.$c.'">
                       </div>
                     </div>
                   </div>
@@ -364,12 +364,12 @@
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección </label>
-                  <input type="text" class="form-control" autocomplete="off" disabled   value='.$g.'>
+                  <input type="text" class="form-control" autocomplete="off" disabled   value="'.$g.'">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudad </label>
-                  <input type="text" class="form-control" autocomplete="off" disabled   value='.$h.'>
+                  <input type="text" class="form-control" autocomplete="off" disabled   value="'.$h.'">
                 </div>
 
                 <div class="form-group">

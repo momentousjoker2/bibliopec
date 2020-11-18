@@ -258,17 +258,17 @@
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label for="validationDefault01">Nombre Completo</label>
-                                        <input type="text" class="form-control" name="Nombre" value='.$a.' maxlength="35" disabled required>
+                                        <input type="text" class="form-control" name="Nombre" value="'.$a.'" maxlength="35" disabled required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
                                         <label for="validationDefault03">Domicilio</label>
-                                        <input type="text" class="form-control" name="Domicilio" disabled  required value='.$b.'>
+                                        <input type="text" class="form-control" name="Domicilio" disabled  required value="'.$b.'">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Ciudad</label>
-                                        <input type="text" class="form-control" name="Ciudad" disabled required value='.$c.'>
+                                        <input type="text" class="form-control" name="Ciudad" disabled required value="'.$c.'">
                                     </div>
                                     <div class="col-md-1 mb-3">
                                         <label for="validationDefault03">CP</label>
