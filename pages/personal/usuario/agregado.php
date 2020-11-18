@@ -160,58 +160,16 @@
 
 	<?php
 	  include '..\..\php\conexiones.php';
-	  if (!@$_POST['Nombre']){
+	  	$id = $_GET['id'];
 		  echo '<div class="main-panel">
           <div class="content-wrapper"> 
             <center>
 				<div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">REGISTRO DE USUARIOS</h4>
-                    <p class="card-description">Ingrese sus Datos </p>
                     <form class="forms-sample" method="post" action="agregar.php">
-                      <div class="form-row">
-                <div class="col-md-6 mb-3">
-                  <label for="validationDefault01">Nombre</label>
-                  <input type="text" class="form-control" name="Nombre" maxlength="35" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="validationDefault02">Apellidos</label>
-                  <input type="text" class="form-control" name="Apellido" maxlength="30" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-5 mb-3">
-                  <label for="validationDefault03">Domicilio</label>
-                  <input type="text" class="form-control" name="Domicilio" required>
-                </div>
-				  <div class="col-md-4 mb-3">
-                  <label for="validationDefault03">Ciudad</label>
-                  <input type="text" class="form-control" name="Ciudad" required>
-                </div>
-				  <div class="col-md-1 mb-3">
-                  <label for="validationDefault03">CP</label>
-                  <input type="text" class="form-control" name="CP" required>
-                </div>
-				  <div class="col-md-3 mb-3">
-                  <label for="validationDefault03">Fecha de Nacimiento</label>
-                  <input type="date" class="form-control" name="FechaNacimiento"  required>
-                </div>
-				  <div class="form-row">
-                <div class="col-md-7 mb-3">
-                  <label for="validationDefault05">Grado de Estudios</label>
-                  <select class="custom-select" id="GradoEstudios" name="GradoEstudios" required>
-                    <option selected disabled value=""></option>
-                    <option value="Preescolar">Preescolar</option>
-                    <option value="Primaria">Primaria</option>
-                    <option value="Secundaria">Secundaria</option>
-					  <option value="Preparatoria">Preparatoria</option>
-					  <option value="Universidad">Universidad</option>
-                  </select>
-                </div>
-              </div>
-              </div>
-              
-              <input class="btn btn-primary" type="submit" id="Save" value="Registrarme!" style="color: white; margin-left: 18%; font-size:large;">
+					<h4 class="card-title">USUARIO REGISTRADO CORRECTAMENTE</h4>
+                    <p class="card-description">Su ID de USUARIO es: '.$id.'</p>
+					<p class="card-description">Guardela para acceder al sistema!</p>
                     </form>
                   </div>
                 </div>  
@@ -225,31 +183,6 @@
             </div>
           </footer>
         </div>';
-
-	  }else{
-		$a = $_POST['Nombre'];
-		  $ap = $_POST['Apellido'];
-		  $b = $_POST['FechaNacimiento'];
-		  $c = $_POST['Domicilio'];
-		  $d = $_POST['Ciudad'];
-		  $e = $_POST['CP'];
-		  $f = $_POST['GradoEstudios'];
-		  $na = $a." ".$ap;
-		  $sql = "INSERT INTO usuario (Nombre, Fecha_Nacimiento, Domicilio, Ciudad, CP, GradoEstudios) VALUES ('$na','$b','$c','$d','$e','$f')";
-		  mysqli_query( $conn, $sql );
-		  $sql = "Select ID from usuario where Nombre='".$na."' AND Fecha_Nacimiento='".$b."'";
-		  echo 'alert("'.$sql.'")';			
-		  $r=mysqli_query($conn,$sql);
-			$row=mysqli_fetch_array($r);
-		  	$id=0;
-			if(mysqli_num_rows($r)==1){
-				$id = $row[0];
-			}
-		  mysqli_close( $conn );
-		  $he = 'http://bibliopec/pages/personal/usuario/agregado.php?id='.$id;
-		  echo "<script>window.location = '".$he."'</script>";
-		  
-	  }
     
 		?>
       </div>

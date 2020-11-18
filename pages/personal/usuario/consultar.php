@@ -181,6 +181,10 @@
                                         <label for="validationDefault01">Nombre</label>
                                         <input type="text" class="form-control" name="Nombre" value="Mark" maxlength="35" disabled required>
                                     </div>
+									<div class="col-md-6 mb-3">
+										<label for="validationDefault02">Apellidos</label>
+                  						<input type="text" class="form-control" name="Apellido" maxlength="30" required disabled>
+                					</div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
@@ -226,7 +230,7 @@
 			$row=mysqli_fetch_array($r);
 			if(mysqli_num_rows($r)==1){
 				//echo "Si existe el cliente <br>";
-				$a =$row[0];$b =$row[1];$c=$row[2];$d=$row[3];$e=$row[4];$f=$row[5];$g=$row[6];
+				$a =$row[0];$b =$row[1];$aa=$row[2];$c=$row[3];$d=$row[4];$e=$row[5];$f=$row[6];$g=$row[7];
 				echo '
         <div class="main-panel">
             <div class="content-wrapper">
@@ -252,6 +256,10 @@
                                         <label for="validationDefault01">Nombre</label>
                                         <input type="text" class="form-control" name="Nombre" value='.$b.' maxlength="35" disabled required>
                                     </div>
+									<div class="col-md-6 mb-3">
+										<label for="validationDefault02">Apellidos</label>
+                  						<input type="text" class="form-control" name="Apellido" maxlength="30" required disabled value='.$aa.'>
+                					</div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
