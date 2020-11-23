@@ -252,7 +252,7 @@ if($_SESSION['user_rol']!='administrador'){
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección</label>
-                  <input type="text" class="form-control" autocomplete="off" name="Direccion">
+                  <input type="text" class="form-control" autocomplete="off" name="Dirección">
                 </div>
 
                 <div class="form-group">
@@ -336,10 +336,10 @@ if($_SESSION['user_rol']!='administrador'){
 		  $l = $_POST['Celular'];
 		  $m = $_POST['HEntrada'];
 		  $n = $_POST['HSalida'];
-		  $sql = "INSERT INTO `personal`(`Nombre`, `password`, `Apellido`, `Fecha_Nac`, `RFC`, `CURP`, `Domicilio`, `Ciudad`, `Codigo_Postal`, `Telefono`, `Fecha_Inicio`, `Celular`, `Hora_entrada`, `Hora_salida`) VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m','$n')";
+		  $sql = "INSERT INTO personal (`Nombre`, `password`, `Apellido`, `Fecha_Nac`, `RFC`, `CURP`, `Domicilio`, `Ciudad`, `Codigo_Postal`, `Telefono`, `Fecha_Inicio`, `Celular`, `Hora_entrada`, `Hora_salida`) VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m','$n')";
 		  mysqli_query( $conn, $sql );
 		  mysqli_close( $conn );
-		  header('Location: http://bibliopec/pages/personal/personal/agregar.php');
+		  echo "<script>window.location = 'http://bibliopec/pages/personal/personal/agregar.php'</script>";
 	  }
 	  ?>
   </div>
