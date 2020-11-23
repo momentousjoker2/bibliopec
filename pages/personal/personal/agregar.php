@@ -2,18 +2,18 @@
 session_start();
 
 
-if($_SESSION['user_rol']!='administrador'){
+//if($_SESSION['user_rol']!='administrador'){
 
-    if($_SESSION['user_rol']=='Usuario') {
+  //  if($_SESSION['user_rol']=='Usuario') {
 
-        header('Location: /pages/usuarios/index.php');
+    //    header('Location: /pages/usuarios/index.php');
 
-    }else{
-        $_SESSION['Login'] = 'error';
-        header('Location: ../../index.php');
-    }
+    //}else{
+      //  $_SESSION['Login'] = 'error';
+        //header('Location: ../../index.php');
+    //}
 
-}
+//}
 
 ?>
 <!DOCTYPE html>
@@ -60,9 +60,6 @@ if($_SESSION['user_rol']!='administrador'){
             </button>
         </div>
     </nav>
-
-    //Aqui voy
-
 
   <div class="container-fluid page-body-wrapper">
     <nav class="sidebar " id="sidebar">

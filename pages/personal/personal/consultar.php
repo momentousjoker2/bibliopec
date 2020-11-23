@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+//session_start();
+/*
 
 if($_SESSION['user_rol']!='administrador'){
 
@@ -13,7 +13,7 @@ if($_SESSION['user_rol']!='administrador'){
         header('Location: ../../index.php');
     }
 
-}
+}*/
 
 ?>
 <!DOCTYPE html>

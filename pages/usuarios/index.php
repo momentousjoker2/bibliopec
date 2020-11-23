@@ -36,6 +36,7 @@ if($_SESSION['user_rol']!='Usuario'){
 
 <body>
 <div class="container-scroller">
+
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
             <a class="navbar-brand brand-logo" href="index.php">
@@ -64,6 +65,7 @@ if($_SESSION['user_rol']!='Usuario'){
             </button>
         </div>
     </nav>
+    <!--Aqui termina el nav y configurar -->
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar " id="sidebar">
             <ul class="nav">
@@ -205,7 +207,3 @@ if($_SESSION['user_rol']!='Usuario'){
 </body>
 
 </html>
-<?php
-echo $_SESSION['Login'];
-echo "\nROL:".$_SESSION['user_rol'];
-?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set("display_errors", false);
 if (!is_null($_SESSION['Login'])){
 if ($_SESSION['Login']!='error')
     $_SESSION['Login']='no-login';

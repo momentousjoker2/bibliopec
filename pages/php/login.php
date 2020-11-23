@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    $conn = new PDO("mysql:host={localhost};dbname={id15146877_bibliopec};charset=utf8", 'id15146877_admin', 'JxzTyKmVZ@zM!-~5');
+    $conn = new PDO("mysql:host=localhost;dbname=id15146877_bibliopec;charset=utf8", 'id15146877_admin', 'JxzTyKmVZ@zM!-~5');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 

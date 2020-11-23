@@ -106,16 +106,16 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="talleres/agregar.php">Agregar</a>
+                                <a class="nav-link" href="./talleres/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="talleres/modificar.php">Modificar</a>
+                                <a class="nav-link" href="./talleres/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="talleres/consultar.php">Consultar</a>
+                                <a class="nav-link" href="./talleres/consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="talleres/consultar.php">Agregar Usuarios</a>
+                                <a class="nav-link" href="./talleres/consultar.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +133,7 @@ if($_SESSION['user_rol']!='administrador'){
                                 <a class="nav-link" href="./usuario/modificar.html">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./usuario/consultar.html">Consultar</a>
+                                <a class="nav-link" href="./usuario/consultar.php">Consultar</a>
                             </li>
                         </ul>
                     </div>
@@ -172,20 +172,18 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-Visitas">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../../pages/vistas/consultar.html">consultar</a>
+                                <a class="nav-link" href="./vistas/consultar.html">consultar</a>
                             </li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </nav>
-
+        <!--Fin de menu-->
         <div class="main-panel">
             <div class="content-wrapper">
 
-
             </div>
-
             <footer class="footer">
                 <div class="container-fluid clearfix">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
@@ -194,6 +192,7 @@ if($_SESSION['user_rol']!='administrador'){
         </div>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -206,7 +205,3 @@ if($_SESSION['user_rol']!='administrador'){
 </body>
 
 </html>
-<?php
-echo $_SESSION['Login'];
-echo "\nROL:".$_SESSION['user_rol'];
-?>

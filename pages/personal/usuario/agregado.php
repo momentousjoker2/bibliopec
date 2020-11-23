@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 
 if($_SESSION['user_rol']!='administrador'){
@@ -13,7 +13,7 @@ if($_SESSION['user_rol']!='administrador'){
         header('Location: ../../index.php');
     }
 
-}
+}*/
 
 ?>
 <!DOCTYPE html>
@@ -60,9 +60,6 @@ if($_SESSION['user_rol']!='administrador'){
             </button>
         </div>
     </nav>
-
-    //aqui voy
-
 
   <div class="container-fluid page-body-wrapper">
     <nav class="sidebar " id="sidebar">
