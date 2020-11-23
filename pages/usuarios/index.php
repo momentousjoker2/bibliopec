@@ -2,11 +2,12 @@
 session_start();
 
 
-if($_SESSION['user_rol']!='administrador'){
+if($_SESSION['user_rol']!='Usuario'){
 
-    if($_SESSION['user_rol']=='Usuario') {
+    if($_SESSION['user_rol']=='administrador') {
 
-        header('Location: /pages/usuarios/index.php');
+        header('Location: /pages/personal/index.php');
+
 
     }else{
         $_SESSION['Login'] = 'error';
@@ -83,13 +84,13 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-Personal">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link " href="./personal/agregar.php">Agregar</a>
+                                <a class="nav-link " href="./personal/agregar.html">Agregar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./personal/modificar.html">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./personal/consultar.php">Consultar</a>
+                                <a class="nav-link" href="./personal/consultar.html">Consultar</a>
                             </li>
                         </ul>
                     </div>

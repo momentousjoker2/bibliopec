@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!is_null($_SESSION['Login'])){
+if ($_SESSION['Login']!='error')
+    $_SESSION['Login']='no-login';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +28,11 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="#">
+                        <form action="./pages/php/login.php" method="post">
                             <div class="form-group">
                                 <label class="label">Usuario</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Usuario">
+                                    <input type="text" name="username" class="form-control" placeholder="Usuario" required >
                                     <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -36,7 +43,7 @@
                             <div class="form-group">
                                 <label class="label">Contraseña</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="*********">
+                                    <input type="password" name="password" class="form-control" placeholder="*********" required >
                                     <div class="input-group-append">
                         <span class="input-group-text">
                           <i class="mdi mdi-check-circle-outline"></i>
@@ -48,6 +55,9 @@
                                 <button class="btn btn-primary submit-btn btn-block">Inicio sesion</button>
                             </div>
                         </form>
+                        <div id="idMensaje" style="display: <?php  if ($_SESSION['Login']=='error') {echo ";";} else {echo "none;"; }?>;" class="alert alert-danger my-3" role="alert">
+                            <p>El Usuario y/o contraseña no es correcto.</p>
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-block g-login">
                                 <img class="mr-3"  alt="">Registrar
@@ -70,6 +80,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+<script>
+    const queryString = window.location.search;
+    if (queryString != "") {
+        //?c=401
+        const eCode = parseInt(queryString.replace("?c=", ""));
+        if (eCode == 401) {
+            document.getElementById("idMensaje").style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
 
