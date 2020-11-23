@@ -71,9 +71,9 @@ if($_SESSION['user_rol']!='administrador'){
                         <span class="menu-title disabled">Tablero De inicio</span>
                     </a>
                 </li>
+                <!--Submenu personal-->
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-Personal" aria-expanded="false"
-                       aria-controls="ui-Personal">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-Personal" aria-expanded="false" aria-controls="ui-Personal">
                         <i class="menu-icon typcn typcn-coffee"></i>
                         <span class="menu-title">Empleados</span>
                         <i class="menu-arrow"></i>
@@ -81,17 +81,20 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-Personal">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link " href="../personal/agregar.html">Agregar</a>
+                                <a class="nav-link " href="../personal/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../personal/modificar.html">Modificar</a>
+                                <a class="nav-link" href="../personal/modificar.html">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../personal/consultar.html">Consultar</a>
+                                <a class="nav-link " href="../personal/consultar.php">Consultar</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+                <!--Submenu personal fin-->
+
+                <!--Submenu talleres-->
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-talleres" aria-expanded="false"
                        aria-controls="ui-talleres">
@@ -102,20 +105,23 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="agregar.php">Agregar</a>
+                                <a class="nav-link disabled" href="../talleres/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="modificar.php">Modificar</a>
+                                <a class="nav-link" href="../talleres/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="consultar.php">Consultar</a>
+                                <a class="nav-link " href="../talleres/consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="Agregar_Usarios.php">Agregar Usuarios</a>
+                                <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+                <!--Submenu talleres fin-->
+
+                <!--Submenu usuarios-->
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-Usuarios" aria-expanded="false"
                        aria-controls="ui-Usuarios">
@@ -129,11 +135,14 @@ if($_SESSION['user_rol']!='administrador'){
                                 <a class="nav-link" href="../usuario/modificar.html">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../usuario/consultar.html">Consultar</a>
+                                <a class="nav-link" href="../usuario/consultar.php">Consultar</a>
                             </li>
                         </ul>
                     </div>
                 </li>
+                <!--Submenu usuarios fin-->
+
+                <!--Submenu grupos-->
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-grupos" aria-expanded="false"
                        aria-controls="ui-grupos">
@@ -158,6 +167,9 @@ if($_SESSION['user_rol']!='administrador'){
                         </ul>
                     </div>
                 </li>
+                <!--Submenu grupos fin-->
+
+                <!--Submenu vistas-->
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-Visitas" aria-expanded="false"
                        aria-controls="ui-Visitas">
@@ -173,8 +185,13 @@ if($_SESSION['user_rol']!='administrador'){
                         </ul>
                     </div>
                 </li>
+                <!--Submenu visitas fin-->
             </ul>
         </nav>
+        <!--Fin de menu creo-->
+
+
+
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="card">

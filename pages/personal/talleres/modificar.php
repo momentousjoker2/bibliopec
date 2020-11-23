@@ -217,15 +217,22 @@ if($_SESSION['user_rol']!='administrador'){
 
               </br>
 
-              <div class="form-group">
-                <label for="nombre-taller">Bibliotecaria</label>
-                <select class="form-control form-control-lg">
-                  <option selected disabled>Seleccioné una</option>
-                  <option >Cristian amezcua</option>
-                  <option >Jessica jazmin</option>
-                  <option >Karen</option>
-                </select>
-              </div>
+                  <div class="form-group">
+                      <label for="nombre-taller">Bibliotecaria</label>
+                      <select class="form-control form-control-lg" name="idEmpleado">
+                          <option selected disabled>Seleccioné una</option>
+                          <?php
+                          include '..\..\php\conexiones.php';
+
+                          $querry = "Select idEmpleado, Nombre, Apellido From empleado";
+                          echo $querry;
+                          $sql=mysqli_query($conn,$querry);
+                          while ($dat = mysqli_fetch_assoc($sql)) {
+                              echo "<option value='$dat[idEmpleado]'>".$dat['Nombre'].' '.$dat['Apellido'].'</option>';
+                          }
+                          ?>
+                      </select>
+                  </div>
 
               </br>
 

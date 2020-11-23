@@ -60,8 +60,7 @@ if($_SESSION['user_rol']!='administrador'){
             </button>
         </div>
     </nav>
-
-
+    <!--Menu inicio-->
   <div class="container-fluid page-body-wrapper">
     <nav class="sidebar " id="sidebar">
       <ul class="nav">
@@ -72,7 +71,8 @@ if($_SESSION['user_rol']!='administrador'){
             <span class="menu-title disabled">Tablero De inicio</span>
           </a>
         </li>
-        <li class="nav-item">
+          <!--Submenu personal-->
+          <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-Personal" aria-expanded="false" aria-controls="ui-Personal">
             <i class="menu-icon typcn typcn-coffee"></i>
             <span class="menu-title">Empleados</span>
@@ -81,18 +81,21 @@ if($_SESSION['user_rol']!='administrador'){
           <div class="collapse" id="ui-Personal">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link " href="../personal/agregar.html">Agregar</a>
+                <a class="nav-link " href="../personal/agregar.php">Agregar</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../personal/modificar.html">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="../personal/consultar.html">Consultar</a>
+                <a class="nav-link " href="../personal/consultar.php">Consultar</a>
               </li>
             </ul>
           </div>
         </li>
-        <li class="nav-item">
+          <!--Submenu personal fin-->
+
+          <!--Submenu talleres-->
+          <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-talleres" aria-expanded="false"
              aria-controls="ui-talleres">
             <i class="menu-icon typcn typcn-coffee"></i>
@@ -102,20 +105,23 @@ if($_SESSION['user_rol']!='administrador'){
           <div class="collapse" id="ui-talleres">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link disabled" href="agregar.php">Agregar</a>
+                <a class="nav-link disabled" href="../talleres/agregar.php">Agregar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="modificar.php">Modificar</a>
+                <a class="nav-link" href="../talleres/modificar.php">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="consultar.php">Consultar</a>
+                <a class="nav-link " href="../talleres/consultar.php">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Agregar_Usarios.php">Agregar Usuarios</a>
+                <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
               </li>
             </ul>
           </div>
         </li>
+          <!--Submenu talleres fin-->
+
+          <!--Submenu usuarios-->
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-Usuarios" aria-expanded="false"
              aria-controls="ui-Usuarios">
@@ -129,11 +135,14 @@ if($_SESSION['user_rol']!='administrador'){
                 <a class="nav-link" href="../usuario/modificar.html">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../usuario/consultar.html">Consultar</a>
+                <a class="nav-link" href="../usuario/consultar.php">Consultar</a>
               </li>
             </ul>
           </div>
         </li>
+          <!--Submenu usuarios fin-->
+
+          <!--Submenu grupos-->
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-grupos" aria-expanded="false"
              aria-controls="ui-grupos">
@@ -158,6 +167,9 @@ if($_SESSION['user_rol']!='administrador'){
             </ul>
           </div>
         </li>
+          <!--Submenu grupos fin-->
+
+          <!--Submenu vistas-->
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ui-Visitas" aria-expanded="false"
              aria-controls="ui-Visitas">
@@ -173,18 +185,20 @@ if($_SESSION['user_rol']!='administrador'){
             </ul>
           </div>
         </li>
+          <!--Submenu visitas fin-->
       </ul>
     </nav>
+      <!--Fin de menu creo-->
 
         <div class="main-panel">
           <div class="content-wrapper"> 
             <div class="card">
             <div class="card-body">
               <h4 class="card-title">Talleres</h4>
-              <form class="forms-sample">
+              <form class="forms-sample" method="post" action="agregarT.php">
                 <div class="form-group">
                   <label for="nombre-taller">Nombre del taller</label>
-                  <input type="text" class="form-control" id="nombre-taller" placeholder="Taller" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                  <input type="text" class="form-control" name="nombre-taller" id="nombre-taller" placeholder="Taller" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                 </div>
 
               </br>
@@ -194,7 +208,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label"  for="fechainicio" >Fecha de inicio</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" id="fechainicio" placeholder="dd/mm/yyyy" autocomplete="off"  style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                        <input type="date" class="form-control" name="fechainicio" id="fechainicio" placeholder="dd/mm/yyyy" autocomplete="off"  style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                       </div>
                     </div>
                   </div>
@@ -203,7 +217,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label"  for="fechafin" >Fecha de fin</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" id="fechafin" placeholder="dd/mm/yyyy" autocomplete="off"  style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                        <input type="date" class="form-control" name="fechafin" id="fechafin" placeholder="dd/mm/yyyy" autocomplete="off"  style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                       </div>
                     </div>
                   </div>
@@ -212,26 +226,33 @@ if($_SESSION['user_rol']!='administrador'){
               </br>
 
                 <div class="form-group">
-                  <label for="nombre-taller">Horas totales del taller</label>
-                  <input type="number" class="form-control" id="nombre-taller" placeholder="0" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                  <label for="horas-taller">Horas totales del taller</label>
+                  <input type="number" name="horas-taller" class="form-control" id="nombre-taller" placeholder="0" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                 </div>
 
               </br>
 
               <div class="form-group">
                 <label for="nombre-taller">Bibliotecaria</label>
-                <select class="form-control form-control-lg">
-                  <option selected disabled>Seleccioné una</option>
-                  <option >Cristian amezcua</option>
-                  <option >Jessica jazmin</option>
-                  <option >Karen</option>
+                <select class="form-control form-control-lg" name="idEmpleado">
+                    <option selected disabled>Seleccioné una</option>
+                    <?php
+                    include '..\..\php\conexiones.php';
+
+                    $querry = "Select idEmpleado, Nombre, Apellido From empleado";
+                    echo $querry;
+                    $sql=mysqli_query($conn,$querry);
+                    while ($dat = mysqli_fetch_assoc($sql)) {
+                        echo "<option value='$dat[idEmpleado]'>".$dat['Nombre'].' '.$dat['Apellido'].'</option>';
+                    }
+                    ?>
                 </select>
               </div>
 
               </br>
 
                   <button type="submit" class="btn btn-success mr-2">Guardar</button>
-                <button class="btn btn-light">Cancel</button>
+                <button class="btn btn-light" type="reset">Cancel</button>
               </form>
             </div>
           </div>
