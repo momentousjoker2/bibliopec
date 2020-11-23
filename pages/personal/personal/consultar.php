@@ -1,50 +1,67 @@
+<?php
+session_start();
+
+
+if($_SESSION['user_rol']!='administrador'){
+
+    if($_SESSION['user_rol']=='Usuario') {
+
+        header('Location: /pages/usuarios/index.php');
+
+    }else{
+        $_SESSION['Login'] = 'error';
+        header('Location: ../../index.php');
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Bibloteca</title>
-  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-  <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
-  <link rel="stylesheet" href="../../../assets/css/shared/style.css">
-  <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
-  <link rel="shortcut icon" href="../../../assets/images/logo.ico"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bibloteca</title>
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="../../../assets/css/shared/style.css">
+    <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
+    <link rel="shortcut icon" href="../../../assets/images/logo.ico" />
 </head>
-
 <body>
 <div class="container-scroller">
-  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-      <a class="navbar-brand brand-logo" href="../index.php">
-        <img src="../../../assets/images/logo.svg" alt="logo"/> </a>
-      <a class="navbar-brand brand-logo-mini" href="../index.php">
-        <img src="../../../assets/images/logo-mini.svg" alt="logo"/> </a>
-    </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-          <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
-             aria-expanded="false"> </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-            <div class="dropdown-header text-center">
-              <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
-              <p class="font-weight-light text-muted mb-0">Correo</p>
-            </div>
-            <a class="dropdown-item">Mi perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
-            <a class="dropdown-item">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
-          </div>
-        </li>
-      </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-        <span class="mdi mdi-menu"></span>
-      </button>
-    </div>
-  </nav>
-  <div class="container-fluid page-body-wrapper">
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a class="navbar-brand brand-logo" href="../index.php">
+                <img src="../../../assets/images/logo.svg" alt="logo"/> </a>
+            <a class="navbar-brand brand-logo-mini" href="../index.php">
+                <img src="../../../assets/images/logo-mini.svg" alt="logo"/> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
+                       aria-expanded="false"> </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                            <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
+                            <p class="font-weight-light text-muted mb-0">Correo</p>
+                        </div>
+                        <a class="dropdown-item">Mi perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
+                        <a class="dropdown-item">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-fluid page-body-wrapper">
     <nav class="sidebar " id="sidebar">
       <ul class="nav">
         <li class="nav-item nav-category">Menú Principal</li>
@@ -84,16 +101,16 @@
           <div class="collapse" id="ui-talleres">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/agregar.html">Agregar</a>
+                <a class="nav-link" href="../talleres/agregar.php">Agregar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/modificar.html">Modificar</a>
+                <a class="nav-link" href="../talleres/modificar.php">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/consultar.html">Consultar</a>
+                <a class="nav-link" href="../talleres/consultar.php">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/consultar.html">Agregar Usuarios</a>
+                <a class="nav-link" href="../talleres/consultar.php">Agregar Usuarios</a>
               </li>
             </ul>
           </div>

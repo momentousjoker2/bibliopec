@@ -84,16 +84,16 @@
           <div class="collapse" id="ui-talleres">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/agregar.html">Agregar</a>
+                <a class="nav-link" href="../talleres/agregar.php">Agregar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="../talleres/modificar.html">Modificar</a>
+                <a class="nav-link disabled" href="../talleres/modificar.php">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/consultar.html">Consultar</a>
+                <a class="nav-link" href="../talleres/consultar.php">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../talleres/Agregar_Usarios.html">Agregar Usuarios</a>
+                <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
               </li>
             </ul>
           </div>
@@ -300,9 +300,9 @@
       <!-- partial:./partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="/index.html">
+          <a class="navbar-brand brand-logo" href="/index.php">
             <img src="../../assets/images/logo.svg" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="/index.html">
+          <a class="navbar-brand brand-logo-mini" href="/index.php">
             <img src="../../assets/images/logo-mini.svg" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">

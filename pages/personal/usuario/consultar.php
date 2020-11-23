@@ -1,7 +1,23 @@
-<<<<<<< Updated upstream:pages/personal/usuario/consultar.html
+<?php
+session_start();
+
+
+if($_SESSION['user_rol']!='administrador'){
+
+    if($_SESSION['user_rol']=='Usuario') {
+
+        header('Location: /pages/usuarios/index.php');
+
+    }else{
+        $_SESSION['Login'] = 'error';
+        header('Location: ../../index.php');
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,9 +29,8 @@
     <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
     <link rel="stylesheet" href="../../../assets/css/shared/style.css">
     <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
-    <link rel="shortcut icon" href="../../../assets/images/logo.ico"/>
+    <link rel="shortcut icon" href="../../../assets/images/logo.ico" />
 </head>
-
 <body>
 <div class="container-scroller">
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -28,7 +43,8 @@
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"  aria-expanded="false"> </a>
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
+                       aria-expanded="false"> </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
                             <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
@@ -44,6 +60,8 @@
             </button>
         </div>
     </nav>
+
+    //aqui voy
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar " id="sidebar">
             <ul class="nav">
@@ -83,16 +101,16 @@
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/agregar.html">Agregar</a>
+                                <a class="nav-link" href="../talleres/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/modificar.html">Modificar</a>
+                                <a class="nav-link" href="../talleres/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/consultar.html">Consultar</a>
+                                <a class="nav-link" href="../talleres/consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/Agregar_Usarios.html">Agregar Usuarios</a>
+                                <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>

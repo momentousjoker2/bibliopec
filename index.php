@@ -18,7 +18,7 @@ if ($_SESSION['Login']!='error')
     <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.addons.css">
     <link rel="stylesheet" href="./assets/css/shared/style.css">
     <link rel="stylesheet" href="./assets/css/demo_1/style.css">
-    <link rel="shortcut icon" href="./assets/images/favicon.ico"/>
+    <link rel="shortcut icon" href="./assets/images/logo.ico"/>
 </head>
 <body>
 

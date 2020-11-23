@@ -63,6 +63,8 @@ if($_SESSION['user_rol']!='administrador'){
             </button>
         </div>
     </nav>
+
+
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar " id="sidebar">
             <ul class="nav">
@@ -104,16 +106,16 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="./talleres/agregar.html">Agregar</a>
+                                <a class="nav-link" href="talleres/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./talleres/modificar.html">Modificar</a>
+                                <a class="nav-link" href="talleres/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./talleres/consultar.html">Consultar</a>
+                                <a class="nav-link" href="talleres/consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./talleres/consultar.html">Agregar Usuarios</a>
+                                <a class="nav-link" href="talleres/consultar.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>

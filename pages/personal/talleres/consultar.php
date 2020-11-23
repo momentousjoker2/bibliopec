@@ -1,6 +1,23 @@
+<?php
+session_start();
+
+
+if($_SESSION['user_rol']!='administrador'){
+
+    if($_SESSION['user_rol']=='Usuario') {
+
+        header('Location: /pages/usuarios/index.php');
+
+    }else{
+        $_SESSION['Login'] = 'error';
+        header('Location: ../../index.php');
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +29,8 @@
     <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
     <link rel="stylesheet" href="../../../assets/css/shared/style.css">
     <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
-    <link rel="shortcut icon" href="../../../assets/images/logo.ico"/>
+    <link rel="shortcut icon" href="../../../assets/images/logo.ico" />
 </head>
-
 <body>
 <div class="container-scroller">
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -39,12 +55,14 @@
                     </div>
                 </li>
             </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-                    data-toggle="offcanvas">
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                 <span class="mdi mdi-menu"></span>
             </button>
         </div>
     </nav>
+
+    //aqui voy
+
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar " id="sidebar">
             <ul class="nav">
@@ -68,7 +86,7 @@
                                 <a class="nav-link " href="../personal/agregar.html">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../personal/modificar.html">Modificar</a>
+                                <a class="nav-link" href="../personal/modificar.html">Modificar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="../personal/consultar.html">Consultar</a>
@@ -86,16 +104,16 @@
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/agregar.html">Agregar</a>
+                                <a class="nav-link" href="agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../talleres/modificar.html">Modificar</a>
+                                <a class="nav-link" href="modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../talleres/consultar.html">Consultar</a>
+                                <a class="nav-link disabled" href="consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="../talleres/Agregar_Usarios.html">Agregar Usuarios</a>
+                                <a class="nav-link" href="Agregar_Usarios.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>
@@ -159,56 +177,59 @@
                 </li>
             </ul>
         </nav>
+
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Talleres</h4>
-                        <form class="forms-sample">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Taller</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>America</option>
-                                                <option>Italy</option>
-                                                <option>Russia</option>
-                                                <option>Britain</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Usuario</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>America</option>
-                                                <option>Italy</option>
-                                                <option>Russia</option>
-                                                <option>Britain</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <button type="submit" class="btn btn-success mr-2">Enviar</button>
-                                <button class="btn btn-light">Cancel</button>
-                            </div>
-                        </form>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre de taller</th>
+                                <th scope="col">Fecha de inicio</th>
+                                <th scope="col">Fecha de fin</th>
+                                <th scope="col">Horas de curso</th>
+                                <th scope="col">Bibliotecaria</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Lectura</td>
+                                <td>10/10/2020</td>
+                                <td>12/12/2020</td>
+                                <td>20</td>
+                                <td>Jessica Jazmin</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Lectura</td>
+                                <td>09/09/2019</td>
+                                <td>01/01/2020</td>
+                                <td>20</td>
+                                <td>Jessica Jazmin</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
+
             </div>
+
+            <footer class="footer">
+                <div class="container-fluid clearfix">
+                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019  All rights reserved.</span>
+                    </span>
+                </div>
+            </footer>
         </div>
     </div>
-
-<footer class="footer">
-    <div class="container-fluid clearfix">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019  All rights reserved.</span>
-        </span>
-    </div>
-</footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
