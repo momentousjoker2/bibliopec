@@ -1,5 +1,5 @@
 <?php
-    include  '..\..\..\..\Listas\conexion.php';
+    include  '..\..\..\..\..\Listas\conexion.php';
     $idUsuario=$_POST['idUsuario'];
     $nombre=$_POST['nombre'];
     if ($nombre ==="") {
