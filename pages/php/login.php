@@ -4,11 +4,8 @@ session_start();
     $conn = new PDO("mysql:host=localhost;dbname=id15146877_bibliopec;charset=utf8", 'id15146877_admin', 'JxzTyKmVZ@zM!-~5');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    $result=false;
 
     $queryA = $conn->prepare("SELECT * FROM empleado WHERE Nombre=? AND Password=?");
     $queryB = $conn->prepare("SELECT * FROM usuarios WHERE Nombre=? AND Password=?");
@@ -22,10 +19,10 @@ session_start();
     $queryB->bindParam(2, $password,PDO::PARAM_STR);
     $queryB->execute();
     $countB=$queryB->rowCount();
-
-
+    $result=$queryB->fetchAll();
 
     if ($countA>=1) {
+
         $_SESSION['Login']='ok';
         $_SESSION['user_rol'] = 'administrador';
 
@@ -35,13 +32,16 @@ session_start();
 
         $_SESSION['Login']='ok';
         $_SESSION['user_rol'] = 'Usuario';
+        $_SESSION['id_user']=$result[0]['idUsuario'];
 
         header('Location: /pages/usuarios/index.php');
 
     }else {
         $_SESSION['Login']='error';
+
         header('Location: ../../index.php');
     }
+
 
 
 
