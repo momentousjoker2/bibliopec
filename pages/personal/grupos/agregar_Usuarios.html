@@ -207,9 +207,9 @@
                     <input type="text" class="form-control" id="validationDefault01" name='idUsuario' readonly required>
                   </div>
                   <div class="col-md-5 mb-3">
-                    <label for="validationDefault02">Nombre</label>
-                    <select class="custom-select" id="validationDefault02" name='Usuario' required>
-                      <option selected disabled value="1"></option>
+                    <label for="validationDefault04">Nombre</label>
+                    <select class="custom-select" id="validationDefault04" name='Usuario' required>
+                      <option selected disabled value=""></option>
                     </select>
                   </div>
                 </div>
@@ -221,7 +221,7 @@
                   <div class="col-md-3 mb-3">
                     <label for="validationDefault05">Permiso</label>
                     <select class="custom-select" id="validationDefault05" name='Estado' required>
-                      <option selected disabled value="1"></option>
+                      <option selected disabled value=""></option>
                       <option value="Aprobado">Aprobado</option>
                       <option value="Rechazado">Rechazado</option>
                     </select>
@@ -255,7 +255,7 @@
     crossorigin="anonymous"></script>
 </body>
 <script>
-      var slU = document.getElementById('validationDefault02');
+      var slU = document.getElementById('validationDefault04');
       var slG = document.getElementById('validationDefault00');
       function grupos() {
         fetch('mGrupo.php',{
