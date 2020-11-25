@@ -194,7 +194,7 @@
                 </div></div>
 				<div class="form-row">
 				<div class="col-md-4 mb-3">
-                  <label for="validationDefault03">Password</label>
+                  <label for="validationDefault03">Contraseña</label>
                   <input type="password" class="form-control" name="password" required>
                 </div>
 				  <div class="col-md-3 mb-3">
@@ -202,7 +202,7 @@
                   <input type="date" class="form-control" name="FechaNacimiento"  required>
                 </div>
 				<div class="col-md-4 mb-3">
-                  <label for="validationDefault05">Genero</label>
+                  <label for="validationDefault05">Género</label>
                   <select class="custom-select" id="Genero" name="Genero" required>
                     <option selected disabled value=""></option>
                     <option value="Masculino">Masculino</option>
@@ -222,7 +222,7 @@
                   </select>
                 </div>
 				<div class="col-md-6 mb-3">
-                  <label for="validationDefault03">Ocupacion</label>
+                  <label for="validationDefault03">Ocupación</label>
                   <input type="text" class="form-control" name="Ocupacion" required>
                 </div>
 				

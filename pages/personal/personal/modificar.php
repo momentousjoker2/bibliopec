@@ -154,123 +154,38 @@
                 </li>
             </ul>
         </nav>
-		<?php 
-			$id = $_GET["id"];
-			require '..\..\php\conexiones.php';
-			$sql = mysqli_query($conn,"SELECT * FROM usuario WHERE id='$id'");
-			$fila=mysqli_fetch_array($sql);
-			$Nombre = $fila['Nombre'];
-			$password = $fila['password'];
-			$Domicilio = $fila['Domicilio'];
-			$Ciudad = $fila['Ciudad'];
-			$CP = $fila['CP'];
-			$Genero = $fila['Genero'];
-			$Ocupacion = $fila['Ocupacion'];
-			$GradoE = $fila['GradoEstudios'];
-			$FechaN = $fila['Fecha_Nacimiento'];
-			
-		?>
-		<?php
-		if($Nombre != ""){
-		echo'
         <div class="main-panel">
-            <div class="content-wrapper">
-                <center>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">MODIFICAR DATOS DE USUARIO</h4>
-                            <p class="card-description">Ingrese sus Cambios </p>
-                            <form class="forms-sample" action="modded.php" method="post">
-                                <div class="form-row">
-                                    <div class="col-md-2 mb-3">
-                                        <label for="id">ID Usuario</label>
-                                        <input type="text" class="form-control" name="id" id="id" readonly required value='.$id.'>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="validationDefault01">Nombre</label>
-                                        <input type="text" class="form-control"  name="Nombre" id="Nombre" value="'.$Nombre.'" maxlength="35" readonly required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationDefault03">Domicilio</label>
-                                        <input type="text" class="form-control" id="Domicilio"  name="Domicilio" required value="'.$Domicilio.'">
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Ciudad</label>
-                                        <input type="text" class="form-control" id="Ciudad"  name="Ciudad" required value="'.$Ciudad.'">
-                                    </div>
-                                    <div class="col-md-1 mb-3">
-                                        <label for="validationDefault03">CP</label>
-                                        <input type="text" class="form-control" id="CP"  name="CP" required value="'.$CP.'">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label for="validationDefault03">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" id="FechaN"  name="FechaN" required value="'.$FechaN.'">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-7 mb-3">
-                                            <label for="validationDefault05">Grado de Estudios</label>
-                                            <select class="custom-select" id="GradoE" required  name="GradoE">
-                                                <option selected readonly value="'.$GradoE.'">'.$GradoE.' - Actual</option>
-                                                <option value="Preescolar">Preescolar</option>
-                                                <option value="Primaria">Primaria</option>
-                                                <option value="Secundaria">Secundaria</option>
-                                                <option value="Preparatoria">Preparatoria</option>
-                                                <option value="Universidad">Universidad</option>
-                                            </select>
-                                        </div>
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Género</label>
-                                        <input type="text" class="form-control" id="Genero"  name="Genero" required value="'.$Genero.'">
-                                    </div>
-                                </div>
-								<div class="form-row">
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Ocupación</label>
-                                        <input type="text" class="form-control" id="Ocupacion"  name="Ocupacion" required value="'.$Ocupacion.'">
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Contraseña</label>
-                                        <input type="password" class="form-control" id="pass1"  name="password">
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Repetir Contraseña</label>
-                                        <input type="password" class="form-control" id="pass2">
-                                    </div>
-								</div>
-                                <button class="btn btn-primary" type="submit">Guardar Cambios!</button>
-                            </form>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid clearfix">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
-                    </span>
-                </div>
-            </footer>
-        </div>';
-		}else{
-			echo '<div class="main-panel">
           <div class="content-wrapper"> 
             <center>
 				<div class="card">
                   <div class="card-body">
-                    <form class="forms-sample" method="post" action="agregar.php">
-					<h4 class="card-title">EL USUARIO CON ESA ID NO EXISTE</h4>
+                    <form class="forms-sample" method="get" action="modifica.php">
+					<h4 class="card-title">INGRESE EL ID DEL PERSONAL:</h4>
+						<div class="form-row">
+                                    <div class="col-md-2 mb-3">
+                                        <label for="id">ID Personal:</label>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <input type="text" class="form-control" name="id" required>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <button class="btn btn-primary" type="submit">Buscar</button>
+                                    </div>
+                                </div>
                     </form>
                   </div>
                 </div>  
 			</center>
-          </div>';
-		}
-	?>
+          </div>
+
+          <footer class="footer">
+            <div class="container-flunameclearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019  All rights reserved.</span>
+              </span>
+            </div>
+          </footer>
+        </div>
+	
     </div>
 </div>
 

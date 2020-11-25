@@ -223,11 +223,11 @@ if($_SESSION['user_rol']!='administrador'){
                                         </div>
 										<div class="col-md-4 mb-3">
 											<label for="validationDefault02">Genero</label>
-                  							<input type="text" class="form-control" name="Genero" maxlength="30" required disabled>
+                  							<input type="text" class="form-control" name="Género" maxlength="30" required disabled>
                 						</div>
 										<div class="col-md-4 mb-3">
 											<label for="validationDefault02">Ocupacion</label>
-                  							<input type="text" class="form-control" name="Ocupacion" maxlength="30" required disabled>
+                  							<input type="text" class="form-control" name="Ocupación" maxlength="30" required disabled>
                 						</div>
                                     </div>
                                 </div>

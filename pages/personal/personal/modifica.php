@@ -157,105 +157,166 @@
 		<?php 
 			$id = $_GET["id"];
 			require '..\..\php\conexiones.php';
-			$sql = mysqli_query($conn,"SELECT * FROM usuario WHERE id='$id'");
+			$sql = mysqli_query($conn,"SELECT * FROM personal WHERE ID='$id'");
 			$fila=mysqli_fetch_array($sql);
 			$Nombre = $fila['Nombre'];
 			$password = $fila['password'];
+			$Apellido = $fila['Apellido'];
+			$FechaN = $fila['Fecha_Nac'];
+			$RFC = $fila['RFC'];
+			$CURP = $fila['CURP'];
 			$Domicilio = $fila['Domicilio'];
 			$Ciudad = $fila['Ciudad'];
-			$CP = $fila['CP'];
-			$Genero = $fila['Genero'];
-			$Ocupacion = $fila['Ocupacion'];
-			$GradoE = $fila['GradoEstudios'];
-			$FechaN = $fila['Fecha_Nacimiento'];
+			$CP = $fila['Codigo_Postal'];
+			$Telefono = $fila['Telefono'];
+			$FechaI = $fila['Fecha_Inicio'];
+			$Celular = $fila['Celular'];
+			$HoraE = $fila['Hora_entrada'];
+			$HoraS = $fila['Hora_salida'];
 			
 		?>
 		<?php
 		if($Nombre != ""){
 		echo'
         <div class="main-panel">
-            <div class="content-wrapper">
-                <center>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">MODIFICAR DATOS DE USUARIO</h4>
-                            <p class="card-description">Ingrese sus Cambios </p>
-                            <form class="forms-sample" action="modded.php" method="post">
-                                <div class="form-row">
-                                    <div class="col-md-2 mb-3">
-                                        <label for="id">ID Usuario</label>
-                                        <input type="text" class="form-control" name="id" id="id" readonly required value='.$id.'>
-                                    </div>
-                                </div>
+        <div class="content-wrapper">
 
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="validationDefault01">Nombre</label>
-                                        <input type="text" class="form-control"  name="Nombre" id="Nombre" value="'.$Nombre.'" maxlength="35" readonly required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-5 mb-3">
-                                        <label for="validationDefault03">Domicilio</label>
-                                        <input type="text" class="form-control" id="Domicilio"  name="Domicilio" required value="'.$Domicilio.'">
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Ciudad</label>
-                                        <input type="text" class="form-control" id="Ciudad"  name="Ciudad" required value="'.$Ciudad.'">
-                                    </div>
-                                    <div class="col-md-1 mb-3">
-                                        <label for="validationDefault03">CP</label>
-                                        <input type="text" class="form-control" id="CP"  name="CP" required value="'.$CP.'">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <label for="validationDefault03">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" id="FechaN"  name="FechaN" required value="'.$FechaN.'">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-7 mb-3">
-                                            <label for="validationDefault05">Grado de Estudios</label>
-                                            <select class="custom-select" id="GradoE" required  name="GradoE">
-                                                <option selected readonly value="'.$GradoE.'">'.$GradoE.' - Actual</option>
-                                                <option value="Preescolar">Preescolar</option>
-                                                <option value="Primaria">Primaria</option>
-                                                <option value="Secundaria">Secundaria</option>
-                                                <option value="Preparatoria">Preparatoria</option>
-                                                <option value="Universidad">Universidad</option>
-                                            </select>
-                                        </div>
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Género</label>
-                                        <input type="text" class="form-control" id="Genero"  name="Genero" required value="'.$Genero.'">
-                                    </div>
-                                </div>
-								<div class="form-row">
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Ocupación</label>
-                                        <input type="text" class="form-control" id="Ocupacion"  name="Ocupacion" required value="'.$Ocupacion.'">
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Contraseña</label>
-                                        <input type="password" class="form-control" id="pass1"  name="password">
-                                    </div>
-									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Repetir Contraseña</label>
-                                        <input type="password" class="form-control" id="pass2">
-                                    </div>
-								</div>
-                                <button class="btn btn-primary" type="submit">Guardar Cambios!</button>
-                            </form>
-                        </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Personal De Biblioteca </h4>
+              <form class="forms-sample" action="modded.php" method="post">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nombre</label>
+                      <div class="col-sm-9">
+					  	<input type="hidden" name="id" value='.$id.'>
+                        <input type="text" class="form-control" name="Nombre" value="'.$Nombre.'" readonly>
+                      </div>
                     </div>
-                </center>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid clearfix">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
-                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Apellidos</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="Apellido" value="'.$Apellido.'" readonly>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </footer>
-        </div>';
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">CURP</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="CURP" value="'.$CURP.'" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">RFC</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" name="RFC" value="'.$RFC.'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" for="fechainicio">Fecha de nacimiento </label>
+                      <div class="col-sm-9">
+                        <input type="date" class="form-control" autocomplete="off" name="Fecha_Nac"
+                          style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"  value="'.$FechaN.'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Fecha de inicio laborar </label>
+                      <div class="col-sm-9">
+                        <input type="date" class="form-control" autocomplete="off" name="Fecha_Inicio"
+                          style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" value="'.$FechaI.'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre-taller">Dirección </label>
+                  <input type="text" class="form-control" autocomplete="off" name="Domicilio" value="'.$Domicilio.'">
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre-taller">Ciudad </label>
+                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" value="'.$Ciudad.'">
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre-taller">Código Postal </label>
+                  <input type="text" class="form-control" autocomplete="off" name="Codigo_Postal" value="'.$CP.'">
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre-taller">Teléfono fijo </label>
+                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" value="'.$Telefono.'">
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre-taller">Teléfono celular </label>
+                  <input type="tel" class="form-control" autocomplete="off" name="Celular" value="'.$Celular.'">
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Hora de entrada </label>
+                      <div class="col-sm-9">
+                        <input type="time" class="form-control" name="Hora_entrada" value="'.$HoraE.'">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Hora de salida</label>
+                      <div class="col-sm-9">
+                        <input type="time" class="form-control" name="Hora_salida" value="'.$HoraS.'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="row">
+				  <div class="col-md-4">
+					<div class="form-group row">
+						<label for="pass1">Contraseña</label>
+                  		<input type="password" class="form-control" autocomplete="off" name="password">
+					</div>
+					<div class="form-group row">
+						<label for="pass2">Repetir Contraseña</label>
+                  		<input type="password" class="form-control" autocomplete="off" name="pass2">
+					</div></div>
+				</div>
+                </br>
+                <button type="submit" class="btn btn-success mr-2">Guardar</button>
+                <button class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
+          </div>
+        </footer>
+      </div>';
 		}else{
 			echo '<div class="main-panel">
           <div class="content-wrapper"> 
@@ -263,7 +324,7 @@
 				<div class="card">
                   <div class="card-body">
                     <form class="forms-sample" method="post" action="agregar.php">
-					<h4 class="card-title">EL USUARIO CON ESA ID NO EXISTE</h4>
+					<h4 class="card-title">EL PERSONAL CON ESA ID NO EXISTE</h4>
                     </form>
                   </div>
                 </div>  

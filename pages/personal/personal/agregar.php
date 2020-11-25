@@ -192,7 +192,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Nombre</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="Nombre">
+                        <input type="text" class="form-control" name="Nombre" required>
                       </div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Apellidos</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="Apellidos">
+                        <input type="text" class="form-control" name="Apellidos" required>
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">CURP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CURP">
+                        <input type="text" class="form-control" name="CURP" id="CURP" required>
                       </div>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">RFC</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="RFC">
+                        <input type="text" class="form-control" name="RFC" required>
                       </div>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label" for="fechainicio">Fecha de nacimiento</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaNac">
+                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaNac" required>
                       </div>
                     </div>
                   </div>
@@ -241,7 +241,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Fecha de inicio laborar</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaInicioL">
+                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaInicioL" required>
                       </div>
                     </div>
                   </div>
@@ -249,28 +249,34 @@ session_start();
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección</label>
-                  <input type="text" class="form-control" autocomplete="off" name="Dirección">
+                  <input type="text" class="form-control" autocomplete="off" name="Dirección" required>
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudad </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Ciudad">
+                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" required>
                 </div>
 				  
 				<div class="row">
                   <div class="col-md-5">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Contraseña</label>
-                      <div class="col-sm-9">
-                        <input type="password" class="form-control" name="Pass">
+                      <label class="col-md-3 col-form-label">Contraseña</label>
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" name="Pass" id="Pass" required>
+                      </div>
+                    </div>
+					<div class="form-group row">
+                      <label class="col-md-3 col-form-label">Repetir Contraseña</label>
+                      <div class="col-md-4">
+                        <input type="password" class="form-control" name="Pass2" id="Pass2" required>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-2">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">CP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CP">
+                        <input type="text" class="form-control" name="CP" required>
                       </div>
                     </div>
                   </div>
@@ -278,12 +284,12 @@ session_start();
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono fijo </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Telefono">
+                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" required>
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono celular </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Celular">
+                  <input type="tel" class="form-control" autocomplete="off" name="Celular" required>
                 </div>
 
                 <div class="row">
@@ -291,7 +297,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de entrada</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control" name="HEntrada">
+                        <input type="time" class="form-control" name="HEntrada" required>
                       </div>
                     </div>
                   </div>
@@ -299,19 +305,49 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de salida</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control" name="HSalida">
+                        <input type="time" class="form-control" name="HSalida" required>
                       </div>
                     </div>
                   </div>
                 </div> 
-
-                <button type="submit" class="btn btn-success mr-2">Guardar</button>
-                <button class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-success mr-2" id="sub" disabled=true>Guardar</button>
+                <button class="btn btn-light" type="button">Cancel</button>
+				<input class="btn btn-success" type="button" id="Com" value="Comprobar" onclick="activar();">
               </form>
+			  
+			  <script type="text/javascript">
+			  	function validar() {
+        			var errores = 0;
+        			var curp = document.getElementById("CURP").value;
+					var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
+        			validado = curp.match(re);
+					
+    				if (!validado){  //Coincide con el formato general?
+    					alert("La CURP NO es correcta");	
+						return false;
+					}
+					
+					var pass1  = document.getElementById("Pass").value;
+					var pass2 =  = document.getElementById("Pass2").value;
+					if (pass1 != pass2){
+						alert("La contraseña no coincide");
+						return false;
+					}
+        			return true;
+					}
+					
+					function activar(){
+					alert("pendejo");
+						if (validar() == true){
+							 document.getElementById("sub").disabled = false;
+						}
+					}
+				}
+			  </script>
+			  
             </div>
           </div>
         </div>
-
       <footer class="footer">
         <div class="container-fluid clearfix">
           <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
