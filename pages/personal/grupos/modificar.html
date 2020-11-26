@@ -20,23 +20,23 @@
   <div class="container-scroller">
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="/index.html">
-          <img src="assets/images/logo.svg" alt="logo" /> </a>
-        <a class="navbar-brand brand-logo-mini" href="/index.html">
-          <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
+        <a class="navbar-brand brand-logo" href="../index.php">
+          <img src="../../../assets/images/logo.svg" alt="logo" /> </a>
+        <a class="navbar-brand brand-logo-mini" href="../index.php">
+          <img src="../../../assets/images/logo-mini.svg" alt="logo" /> </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> </a>
+            </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
                 <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
                 <p class="font-weight-light text-muted mb-0">Correo</p>
               </div>
-              <a class="dropdown-item">My Profile <i class="dropdown-item-icon ti-dashboard"></i></a>
-              <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+              <a class="dropdown-item">Mi perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
+              <a class="dropdown-item">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
             </div>
           </li>
         </ul>
@@ -49,51 +49,30 @@
     <div class="container-fluid page-body-wrapper">
       <nav class="sidebar " id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-category">Main Menu</li>
+          <li class="nav-item nav-category">Menú Principal</li>
           <li class="nav-item">
-            <a class="nav-link " href="../../../index.html">
+            <a class="nav-link " href="../index.php">
               <i class="menu-icon typcn typcn-document-text"></i>
-              <span class="menu-title disabled">Dashboard</span>
+              <span class="menu-title disabled">Tablero De inicio</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-Personal" aria-expanded="false"
               aria-controls="ui-Personal">
               <i class="menu-icon typcn typcn-coffee"></i>
-              <span class="menu-title">Personal</span>
+              <span class="menu-title">Empleados</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-Personal">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link " href="../../pages/personal/agregar.html">Agregar</a>
+                  <a class="nav-link " href="../personal/agregar.html">Agregar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/personal/modificar.html">modificar</a>
+                  <a class="nav-link " href="../personal/modificar.html">Modificar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/personal/consultar.html">consultar</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-permisos" aria-expanded="false"
-              aria-controls="ui-permisos">
-              <i class="menu-icon typcn typcn-coffee"></i>
-              <span class="menu-title">Permisos</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-permisos">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link " href="../../permisos/agregar.html">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../../pages/permisos/modificar.html">modificar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../../pages/permisos/consultar.html">consultar</a>
+                  <a class="nav-link " href="../personal/consultar.html">Consultar</a>
                 </li>
               </ul>
             </div>
@@ -102,41 +81,22 @@
             <a class="nav-link" data-toggle="collapse" href="#ui-talleres" aria-expanded="false"
               aria-controls="ui-talleres">
               <i class="menu-icon typcn typcn-coffee"></i>
-              <span class="menu-title">talleres</span>
+              <span class="menu-title">Talleres</span>
               <i class="menu-arrow"></i>
             </a>
-
             <div class="collapse" id="ui-talleres">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link " href="../../pages/talleres/agregar.html">Agregar</a>
+                  <a class="nav-link" href="../talleres/agregar.php">Agregar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/talleres/modificar.html">modificar</a>
+                  <a class="nav-link" href="../talleres/modificar.php">Modificar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/talleres/consultar.html">consultar</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-grupos" aria-expanded="false"
-              aria-controls="ui-grupos">
-              <i class="menu-icon typcn typcn-coffee"></i>
-              <span class="menu-title">Grupos</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-grupos">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true" href="agregar.html">Agregar</a>
+                  <a class="nav-link" href="../talleres/consultar.php">Consultar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/grupos/modificar.html">modificar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="consultar.html">consultar</a>
+                  <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
                 </li>
               </ul>
             </div>
@@ -151,13 +111,34 @@
             <div class="collapse" id="ui-Usuarios">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link " href="../../pages/usuario/agregar.html">Agregar</a>
+                  <a class="nav-link" href="../usuario/modificar.html">Modificar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../usuario/modificar.html">modificar</a>
+                  <a class="nav-link " href="../usuario/consultar.html">Consultar</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-grupos" aria-expanded="false"
+              aria-controls="ui-grupos">
+              <i class="menu-icon typcn typcn-coffee"></i>
+              <span class="menu-title">Grupos</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-grupos">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="../grupos/agregar.html">Agregar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../../pages/usuario/consultar.html">consultar</a>
+                  <a class="nav-link disabled" href="../grupos/modificar.html">Modificar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../grupos/consultar.html">Consultar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../grupos/agregar_Usuarios.html">Agregar Usuarios</a>
                 </li>
               </ul>
             </div>
@@ -172,20 +153,13 @@
             <div class="collapse" id="ui-Visitas">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link " href="../vistas/agregar.html">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../../pages/vistas/modificar.html">modificar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../../pages/vistas/consultar.html">consultar</a>
+                  <a class="nav-link" href="../vistas/consultar.html">consultar</a>
                 </li>
               </ul>
             </div>
           </li>
         </ul>
       </nav>
-
       <div class="main-panel">
         <div class="content-wrapper">
 
