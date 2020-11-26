@@ -172,34 +172,34 @@
                       <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault01">Nombre</label>
-                  <input type="text" class="form-control" name="Nombre" maxlength="35" required>
+                  <input type="text" class="form-control" name="Nombre" maxlength="15" required>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault02">Apellidos</label>
-                  <input type="text" class="form-control" name="Apellido" maxlength="30" required>
+                  <input type="text" class="form-control" name="Apellido" maxlength="15" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-5 mb-3">
                   <label for="validationDefault03">Domicilio</label>
-                  <input type="text" class="form-control" name="Domicilio" required>
+                  <input type="text" class="form-control" name="Domicilio" required maxlength="50">
                 </div>
 				  <div class="col-md-4 mb-3">
                   <label for="validationDefault03">Ciudad</label>
-                  <input type="text" class="form-control" name="Ciudad" required>
+                  <input type="text" class="form-control" name="Ciudad" required maxlength="30"> 
                 </div>
 				  <div class="col-md-1 mb-3">
                   <label for="validationDefault03">CP</label>
-                  <input type="text" class="form-control" name="CP" required>
+                  <input type="text" class="form-control" name="CP" required maxlength="5">
                 </div></div>
 				<div class="form-row">
 				<div class="col-md-4 mb-3">
                   <label for="validationDefault03">Contraseña</label>
-                  <input type="password" class="form-control" name="password" required>
+                  <input type="password" class="form-control" name="password" required maxlength="32">
                 </div>
 				  <div class="col-md-3 mb-3">
                   <label for="validationDefault03">Fecha de Nacimiento</label>
-                  <input type="date" class="form-control" name="FechaNacimiento"  required>
+                  <input type="date" class="form-control" name="FechaNacimiento"  required >
                 </div>
 				<div class="col-md-4 mb-3">
                   <label for="validationDefault05">Género</label>
@@ -223,7 +223,7 @@
                 </div>
 				<div class="col-md-6 mb-3">
                   <label for="validationDefault03">Ocupación</label>
-                  <input type="text" class="form-control" name="Ocupacion" required>
+                  <input type="text" class="form-control" name="Ocupacion" required maxlength="16">
                 </div>
 				
               </div>

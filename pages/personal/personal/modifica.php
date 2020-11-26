@@ -219,7 +219,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">RFC</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="RFC" value="'.$RFC.'">
+                        <input type="text" class="form-control" name="RFC" value="'.$RFC.'" maxlength="13">
                       </div>
                     </div>
                   </div>
@@ -251,27 +251,27 @@
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Domicilio" value="'.$Domicilio.'">
+                  <input type="text" class="form-control" autocomplete="off" name="Domicilio" value="'.$Domicilio.'" maxlength="50">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudad </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" value="'.$Ciudad.'">
+                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" value="'.$Ciudad.'" maxlength="30">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Código Postal </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Codigo_Postal" value="'.$CP.'">
+                  <input type="text" class="form-control" autocomplete="off" name="Codigo_Postal" value="'.$CP.'" maxlength="5">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono fijo </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" value="'.$Telefono.'">
+                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" value="'.$Telefono.'" maxlength="10">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono celular </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Celular" value="'.$Celular.'">
+                  <input type="tel" class="form-control" autocomplete="off" name="Celular" value="'.$Celular.'" maxlength="10">
                 </div>
 
                 <div class="row">
@@ -296,17 +296,39 @@
 				  <div class="col-md-4">
 					<div class="form-group row">
 						<label for="pass1">Contraseña</label>
-                  		<input type="password" class="form-control" autocomplete="off" name="password">
+                  		<input type="password" class="form-control" autocomplete="off" name="password" maxlength="32">
 					</div>
 					<div class="form-group row">
 						<label for="pass2">Repetir Contraseña</label>
-                  		<input type="password" class="form-control" autocomplete="off" name="pass2">
+                  		<input type="password" class="form-control" autocomplete="off" name="pass2" maxlength="32">
 					</div></div>
 				</div>
                 </br>
-                <button type="submit" class="btn btn-success mr-2">Guardar</button>
-                <button class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-success mr-2" id="sub" disabled=true>Guardar</button>
+                <button class="btn btn-light" type="button">Cancel</button>
+				<button class="btn btn-light" type="button" id="Com" value="Comprobar" onclick="activar();">Comprobar</button>
               </form>
+			  
+			  <script type="text/javascript">
+			  	function validar() {
+        			var errores = 0;
+					var pass1  = document.getElementById("Pass").value;
+					var pass2 = document.getElementById("Pass2").value;
+					if (pass1 != pass2){
+						alert("La contraseña no coincide");
+						return false;
+					}
+        			return true;
+					}
+					
+					function activar(){
+						if (validar() == true){
+							 document.getElementById("sub").disabled = false;
+						}
+					}
+				
+			  </script>
+			  
             </div>
           </div>
         </div>

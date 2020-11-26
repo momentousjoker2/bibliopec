@@ -192,7 +192,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Nombre</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="Nombre" required>
+                        <input type="text" class="form-control" name="Nombre" required maxlength="30">
                       </div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Apellidos</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="Apellidos" required>
+                        <input type="text" class="form-control" name="Apellidos" required maxlength="30">
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">CURP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CURP" id="CURP" required>
+                        <input type="text" class="form-control" name="CURP" id="CURP" required maxlength="18">
                       </div>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">RFC</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="RFC" required>
+                        <input type="text" class="form-control" name="RFC" required maxlength="13">
                       </div>
                     </div>
                   </div>
@@ -249,12 +249,12 @@ session_start();
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección</label>
-                  <input type="text" class="form-control" autocomplete="off" name="Dirección" required>
+                  <input type="text" class="form-control" autocomplete="off" name="Dirección" required maxlength="50">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudad </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" required>
+                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" required maxlength="30">
                 </div>
 				  
 				<div class="row">
@@ -262,13 +262,13 @@ session_start();
                     <div class="form-group row">
                       <label class="col-md-3 col-form-label">Contraseña</label>
                       <div class="col-md-4">
-                        <input type="password" class="form-control" name="Pass" id="Pass" required>
+                        <input type="password" class="form-control" name="Pass" id="Pass" required maxlength="32">
                       </div>
                     </div>
 					<div class="form-group row">
                       <label class="col-md-3 col-form-label">Repetir Contraseña</label>
                       <div class="col-md-4">
-                        <input type="password" class="form-control" name="Pass2" id="Pass2" required>
+                        <input type="password" class="form-control" name="Pass2" id="Pass2" required maxlength="32">
                       </div>
                     </div>
                   </div>
@@ -276,7 +276,7 @@ session_start();
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">CP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CP" required>
+                        <input type="text" class="form-control" name="CP" required maxlength="5">
                       </div>
                     </div>
                   </div>
@@ -284,12 +284,12 @@ session_start();
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono fijo </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" required>
+                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" required maxlength="10">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono celular </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Celular" required>
+                  <input type="tel" class="form-control" autocomplete="off" name="Celular" required maxlength="10">
                 </div>
 
                 <div class="row">
@@ -312,7 +312,7 @@ session_start();
                 </div> 
                 <button type="submit" class="btn btn-success mr-2" id="sub" disabled=true>Guardar</button>
                 <button class="btn btn-light" type="button">Cancel</button>
-				<input class="btn btn-success" type="button" id="Com" value="Comprobar" onclick="activar();">
+				<button class="btn btn-light" type="button" id="Com" value="Comprobar" onclick="activar();">Comprobar</button>
               </form>
 			  
 			  <script type="text/javascript">
@@ -328,7 +328,7 @@ session_start();
 					}
 					
 					var pass1  = document.getElementById("Pass").value;
-					var pass2 =  = document.getElementById("Pass2").value;
+					var pass2 = document.getElementById("Pass2").value;
 					if (pass1 != pass2){
 						alert("La contraseña no coincide");
 						return false;
@@ -337,12 +337,11 @@ session_start();
 					}
 					
 					function activar(){
-					alert("pendejo");
 						if (validar() == true){
 							 document.getElementById("sub").disabled = false;
 						}
 					}
-				}
+				
 			  </script>
 			  
             </div>

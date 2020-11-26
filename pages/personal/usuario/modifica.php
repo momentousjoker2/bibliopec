@@ -197,15 +197,15 @@
                                 <div class="form-row">
                                     <div class="col-md-5 mb-3">
                                         <label for="validationDefault03">Domicilio</label>
-                                        <input type="text" class="form-control" id="Domicilio"  name="Domicilio" required value="'.$Domicilio.'">
+                                        <input type="text" class="form-control" id="Domicilio"  name="Domicilio" required value="'.$Domicilio.'" maxlength="50">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Ciudad</label>
-                                        <input type="text" class="form-control" id="Ciudad"  name="Ciudad" required value="'.$Ciudad.'">
+                                        <input type="text" class="form-control" id="Ciudad"  name="Ciudad" required value="'.$Ciudad.'" maxlength="30">
                                     </div>
                                     <div class="col-md-1 mb-3">
                                         <label for="validationDefault03">CP</label>
-                                        <input type="text" class="form-control" id="CP"  name="CP" required value="'.$CP.'">
+                                        <input type="text" class="form-control" id="CP"  name="CP" required value="'.$CP.'" maxlength="5">
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="validationDefault03">Fecha de Nacimiento</label>
@@ -225,26 +225,50 @@
                                         </div>
                                     </div>
 									<div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Género</label>
-                                        <input type="text" class="form-control" id="Genero"  name="Genero" required value="'.$Genero.'">
+                                        <label for="validationDefault05">Género</label>
+                  						<select class="custom-select" id="Genero" name="Genero" required>
+                    						<option selected disabled value="'.$Genero.'">'.$Genero.'</option>
+                    						<option value="Masculino">Masculino</option>
+                    						<option value="Femenino">Femenino</option>
+                  						</select>
                                     </div>
                                 </div>
 								<div class="form-row">
 									<div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Ocupación</label>
-                                        <input type="text" class="form-control" id="Ocupacion"  name="Ocupacion" required value="'.$Ocupacion.'">
+                                        <input type="text" class="form-control" id="Ocupacion"  name="Ocupacion" required value="'.$Ocupacion.'" maxlength="16">
                                     </div>
 									<div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Contraseña</label>
-                                        <input type="password" class="form-control" id="pass1"  name="password">
+                                        <input type="password" class="form-control" id="pass1"  name="password" maxlength="32">
                                     </div>
 									<div class="col-md-4 mb-3">
                                         <label for="validationDefault03">Repetir Contraseña</label>
-                                        <input type="password" class="form-control" id="pass2">
+                                        <input type="password" class="form-control" id="pass2" maxlength="32">
                                     </div>
 								</div>
-                                <button class="btn btn-primary" type="submit">Guardar Cambios!</button>
+                                <button class="btn btn-primary" type="submit" disabled=true>Guardar Cambios!</button>
+								<button class="btn btn-light" type="button" id="Com" value="Comprobar" onclick="activar();">Comprobar</button>
                             </form>
+							<script type="text/javascript">
+			  					function validar() {
+									var pass1  = document.getElementById("Pass").value;
+									var pass2 = document.getElementById("Pass2").value;
+									if (pass1 != pass2){
+										alert("La contraseña no coincide");
+										return false;
+									}
+        							return true;
+									}
+					
+									function activar(){
+										alert("Shet");
+										if (validar() == true){
+											document.getElementById("sub").disabled = false;
+										}
+									}
+				
+			  				</script>
                         </div>
                     </div>
                 </center>
