@@ -176,7 +176,7 @@
                     <input type="text" class="form-control" id="validationDefault01" name='idUsuario' readonly required>
                   </div>
                   <div class="col-md-5 mb-3">
-                    <label for="validationDefault04">Nombre</label>
+                    <label for="validationDefault04">Nombre *</label>
                     <select class="custom-select" id="validationDefault04" name='Usuario' required>
                       <option selected disabled value=""></option>
                     </select>
@@ -184,11 +184,11 @@
                 </div>
                 <div class="form-row"> 
                   <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Nombre del Tutor</label>
+                    <label for="validationDefault03">Nombre del Tutor *</label>
                     <input type="text" class="form-control" id="validationDefault03" name='Tutor' required>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <label for="validationDefault02">Permiso</label>
+                    <label for="validationDefault02">Permiso *</label>
                     <select class="custom-select" id="validationDefault02" name='Estado' required>
                       <option selected disabled value=""></option>
                       <option value="Aprobado">Aprobado</option>
@@ -200,7 +200,15 @@
               </form>
             </div>
           </div>
-
+          <div class="footer">
+            <div class="container-fluid clearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                * Campos obligatorios<br>
+                <a href="consultarUpG.html">Consultar usuarios de grupos</a>
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
 
         <footer class="footer">
