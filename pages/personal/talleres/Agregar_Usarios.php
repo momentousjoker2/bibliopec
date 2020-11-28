@@ -75,7 +75,7 @@ if($_SESSION['user_rol']!='administrador'){
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-Personal" aria-expanded="false" aria-controls="ui-Personal">
                         <i class="menu-icon typcn typcn-coffee"></i>
-                        <span class="menu-title">Empleados</span>
+                        <span class="menu-title">Personal</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="ui-Personal">
@@ -84,7 +84,7 @@ if($_SESSION['user_rol']!='administrador'){
                                 <a class="nav-link " href="../personal/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../personal/modificar.html">Modificar</a>
+                                <a class="nav-link" href="../personal/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="../personal/consultar.php">Consultar</a>
@@ -132,7 +132,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-Usuarios">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../usuario/modificar.html">Modificar</a>
+                                <a class="nav-link" href="../usuario/modificar.php">Modificar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../usuario/consultar.php">Consultar</a>
