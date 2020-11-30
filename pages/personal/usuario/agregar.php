@@ -159,7 +159,7 @@
     </nav>
 
 	<?php
-	  include '..\..\php\conexiones.php';
+	  include '../../../pages/php/conexiones.php';
 	  if (!@$_POST['Nombre']){
 		  echo '<div class="main-panel">
           <div class="content-wrapper"> 
@@ -267,9 +267,9 @@
 				$id = $row[0];
 			}
 		  mysqli_close( $conn );
-		  $he = 'http://bibliopec/pages/personal/usuario/agregado.php?id='.$id;
-		  echo "<script>window.location = '".$he."'</script>";
-		  
+
+          header('Location: /pages/personal/usuario/agregado.php?id='.$id);
+
 	  }
     
 		?>

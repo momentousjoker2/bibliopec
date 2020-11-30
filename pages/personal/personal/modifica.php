@@ -156,7 +156,7 @@
         </nav>
 		<?php 
 			$id = $_GET["id"];
-			require '..\..\php\conexiones.php';
+			require '../../../pages/php/conexiones.php';
 			$sql = mysqli_query($conn,"SELECT * FROM personal WHERE ID='$id'");
 			$fila=mysqli_fetch_array($sql);
 			$Nombre = $fila['Nombre'];

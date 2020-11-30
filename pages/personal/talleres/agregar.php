@@ -237,7 +237,7 @@ if($_SESSION['user_rol']!='administrador'){
                 <select class="form-control form-control-lg" name="idEmpleado">
                     <option selected disabled>Seleccioné una</option>
                     <?php
-                    include '..\..\php\conexiones.php';
+                    include '../../../pages/php/conexiones.php';
 
                     $querry = "Select idEmpleado, Nombre, Apellido From empleado";
                     echo $querry;

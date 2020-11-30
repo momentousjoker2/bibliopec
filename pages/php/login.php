@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-    $conn = new PDO("mysql:host=localhost;dbname=id15146877_bibliopec;charset=utf8", 'id15146877_admin', 'JxzTyKmVZ@zM!-~5');
+    $conn = new PDO("mysql:host=mysql-bibliopec.alwaysdata.net;dbname=bibliopec_db;charset=utf8", 'bibliopec', '3bcHABETUjkl');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $queryA = $conn->prepare("SELECT * FROM empleado WHERE Nombre=? AND Password=?");
-    $queryB = $conn->prepare("SELECT * FROM usuarios WHERE Nombre=? AND Password=?");
+    $queryA = $conn->prepare("SELECT * FROM personal WHERE Nombre=? AND password=?");
+    $queryB = $conn->prepare("SELECT * FROM usuario WHERE Nombre=? AND Password=?");
 
     $queryA->bindParam(1, $username,PDO::PARAM_STR);
     $queryA->bindParam(2, $password,PDO::PARAM_STR);

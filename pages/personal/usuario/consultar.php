@@ -171,7 +171,7 @@ if($_SESSION['user_rol']!='administrador'){
             </ul>
         </nav>
 		<?php
-		include '..\..\php\conexiones.php';
+		include '../../../pages/php/conexiones.php';
 		if(!@$_POST['id']){
 			echo '
         <div class="main-panel">

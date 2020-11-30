@@ -209,7 +209,7 @@ if($_SESSION['user_rol']!='administrador'){
                             <tbody>
 
                             <?php
-                            include '..\..\php\conexiones.php';
+                            include '../../../pages/php/conexiones.php';
                             $querry = "Select * From talleres";
                             $sql=mysqli_query($conn,$querry);
                             while ($dat = mysqli_fetch_assoc($sql)) {

@@ -1,6 +1,6 @@
 <?php
 
-include '..\..\php\conexiones.php';
+include '../../../pages/php/conexiones.php';
 include_once '';
     $nombre=$_POST['nombre-taller'];
     $fechainicio=$_POST['fechainicio'];
@@ -11,6 +11,7 @@ include_once '';
     $insert = "INSERT INTO talleres(IdEmpleado,Nombre,fecha_inicio,fecha_fin,horas_taller) VALUES (".$idEmpleado.",'".$nombre."','".$fechainicio."','".$fechafin."','".$horas_taller."')";
 
     if (mysqli_query($conn, $insert)) {
+
         header('Location: ./agregar.php');
     } else {
         echo 'Error: ' . $insert . '<br>' . mysqli_error($conn);

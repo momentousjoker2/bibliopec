@@ -2,7 +2,7 @@
 
 session_start();
 
-include '..\..\php\conexiones.php';
+include '../../../pages/php/conexiones.php';
 
 $idUsuario=$_SESSION['id_user'];
 $consulta = $_POST['consulta'];

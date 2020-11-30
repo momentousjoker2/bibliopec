@@ -1,5 +1,5 @@
 <?php
-    include  '../php/conexiones.php';
+    include  '../../../pages/php/conexiones.php';
     $instruccion = "Select idTaller, Nombre From talleres";
     $sql=mysqli_query($conn,$instruccion);
     echo "<option selected disabled value=''></option> ";

@@ -155,7 +155,7 @@
             </ul>
         </nav>
 		<?php
-			require '..\..\php\conexiones.php';
+			require '../../../pages/php/conexiones.php';
 			$id = $_POST['id'];
 			$Nombre = $_POST['Nombre'];
 			$password = $_POST['password'];

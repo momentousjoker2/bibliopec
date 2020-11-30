@@ -176,7 +176,7 @@ session_start();
     </nav>
 
 	<?php
-	  include '..\..\php\conexiones.php';
+	  include '../../../pages/php/conexiones.php';
 	  if (!@$_POST['Nombre']){
 		  echo '
     <div class="main-panel">
@@ -371,7 +371,7 @@ session_start();
 		  $sql = "INSERT INTO personal (`Nombre`, `password`, `Apellido`, `Fecha_Nac`, `RFC`, `CURP`, `Domicilio`, `Ciudad`, `Codigo_Postal`, `Telefono`, `Fecha_Inicio`, `Celular`, `Hora_entrada`, `Hora_salida`) VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m','$n')";
 		  mysqli_query( $conn, $sql );
 		  mysqli_close( $conn );
-		  echo "<script>window.location = 'http://bibliopec/pages/personal/personal/agregar.php'</script>";
+          header('Location: /pages/personal/personal/agregar.php');
 	  }
 	  ?>
   </div>

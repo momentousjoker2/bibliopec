@@ -1,5 +1,5 @@
 <?php
-    include  '../php/conexiones.php';
+    include  '../../../pages/php/conexiones.php';
     $idGrupo = $_POST['idGrupo'];
     $idUsuario = $_POST['idUsuario'];
                        //idUsuario

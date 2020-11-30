@@ -1,5 +1,5 @@
 <?php
-    include  '../php/conexiones.php';
+    include  '../../../pages/php/conexiones.php';
     $idGrupo =$_POST['idGrupo'];
     $instruccion = "Select idTaller, Escuela, Nombre_Encargado From grupos where idGrupo =" . $idGrupo;
     $sql=mysqli_query($conn,$instruccion);
