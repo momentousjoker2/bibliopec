@@ -126,16 +126,16 @@
           <div class="collapse" id="ui-grupos">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="../grupos/agregar.html">Agregar</a>
+                <a class="nav-link" href="../grupos/agregar.php">Agregar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../grupos/modificar.html">Modificar</a>
+                <a class="nav-link" href="../grupos/modificar.php">Modificar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../grupos/consultar.html">Consultar</a>
+                <a class="nav-link" href="../grupos/consultar.php">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../grupos/agregar_Usuarios.html">Agregar Usuarios</a>
+                <a class="nav-link" href="../grupos/agregar_Usuarios.php">Agregar Usuarios</a>
               </li>
             </ul>
           </div>
@@ -150,7 +150,7 @@
           <div class="collapse" id="ui-Visitas">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="../vistas/consultar.html">consultar</a>
+                <a class="nav-link" href="../vistas/consultar.php">consultar</a>
               </li>
             </ul>
           </div>

@@ -10,7 +10,7 @@ $hora_llegada = $_POST['hora_llegada'];
 $hora_salida = $_POST['hora_salida'];
 
 
-$insert = "INSERT INTO visita(idUsuario,material,Hora_entrada,Hora_salida) VALUES (" . $idUsuario . ",'" . $consulta . "','" . $hora_llegada . "','" . $hora_salida . "')";
+$insert = "INSERT INTO visitas(idUsuario,material,Hora_entrada,Hora_salida) VALUES (" . $idUsuario . ",'" . $consulta . "','" . $hora_llegada . "','" . $hora_salida . "')";
 
 if (mysqli_query($conn, $insert)) {
     header('Location: ./agregar.php');
