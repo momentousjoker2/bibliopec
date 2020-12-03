@@ -15,7 +15,8 @@ $insert = "INSERT INTO visita(idUsuario,material,Hora_entrada,Hora_salida) VALUE
 if (mysqli_query($conn, $insert)) {
     header('Location: ./agregar.php');
 } else {
-    echo 'Error: ' . $insert . '<br>' . mysqli_error($conn);
+    echo 'Error Comunicate con el adminsitrador: ' . $insert . '<br>' . mysqli_error($conn);
 }
+
 
 
