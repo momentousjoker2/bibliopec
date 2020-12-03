@@ -234,16 +234,15 @@ if($_SESSION['user_rol']!='administrador'){
 
               <div class="form-group">
                 <label for="nombre-taller">Bibliotecaria</label>
-                <select class="form-control form-control-lg" name="idEmpleado">
+                <select class="form-control form-control-lg" name="idEmpleado" id="idEmpleado">
                     <option selected disabled>Seleccioné una</option>
                     <?php
                     include '../../../pages/php/conexiones.php';
 
-                    $querry = "Select idEmpleado, Nombre, Apellido From empleado";
-                    echo $querry;
+                    $querry = "Select ID, Nombre, Apellido From personal";
                     $sql=mysqli_query($conn,$querry);
                     while ($dat = mysqli_fetch_assoc($sql)) {
-                        echo "<option value='$dat[idEmpleado]'>".$dat['Nombre'].' '.$dat['Apellido'].'</option>';
+                        echo "<option value='$dat[ID]'>".$dat['Nombre'].' '.$dat['Apellido'].'</option>';
                     }
                     ?>
                 </select>

@@ -14,6 +14,7 @@ if($_SESSION['user_rol']!='administrador'){
     }
 
 }*/
+include '../../../pages/php/conexiones.php';
 
 ?>
 <!DOCTYPE html>
@@ -197,17 +198,21 @@ if($_SESSION['user_rol']!='administrador'){
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Talleres</h4>
-                        <form class="forms-sample">
+                        <form class="forms-sample" action="agregar_U.php" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Taller</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>America</option>
-                                                <option>Italy</option>
-                                                <option>Russia</option>
-                                                <option>Britain</option>
+                                            <select name="idTaller" class="form-control">
+
+                                                <?php
+                                                $querry = "Select idTaller, Nombre From talleres";
+                                                $sql = mysqli_query($conn, $querry);
+                                                while ($dat = mysqli_fetch_assoc($sql)) {
+                                                    echo "<option value='$dat[idTaller]'>" . $dat['Nombre']  . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -216,11 +221,15 @@ if($_SESSION['user_rol']!='administrador'){
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Usuario</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>America</option>
-                                                <option>Italy</option>
-                                                <option>Russia</option>
-                                                <option>Britain</option>
+                                            <select name="idEmpleado" class="form-control">
+                                                <?php
+                                                $querry = "Select ID, Nombre From usuario";
+                                                $sql = mysqli_query($conn, $querry);
+                                                while ($dat = mysqli_fetch_assoc($sql)) {
+                                                    echo "<option value='$dat[ID]'>" . $dat['Nombre'] . ' ' . $dat['Apellido'] . '</option>';
+                                                }
+                                                ?>
+
                                             </select>
                                         </div>
                                     </div>

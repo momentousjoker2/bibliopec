@@ -213,8 +213,7 @@ if($_SESSION['user_rol']!='administrador'){
                             $querry = "Select * From talleres";
                             $sql=mysqli_query($conn,$querry);
                             while ($dat = mysqli_fetch_assoc($sql)) {
-
-                                $resultado = $conn->query("Select * From empleado where idEmpleado=".$dat['IdEmpleado']);
+                                $resultado = $conn->query("Select * From personal  where ID=".$dat['IdEmpleado']);
                                 $empleado = $resultado->fetch_assoc();
                                 echo"
                                    <tr>
