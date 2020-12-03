@@ -1,10 +1,17 @@
 <?php
 session_start();
 ini_set("display_errors", false);
-if (!is_null($_SESSION['Login'])){
-if ($_SESSION['Login']!='error')
-    $_SESSION['Login']='no-login';
+
+if($_SESSION['user_rol']=='Usuario'){
+    header('Location: /pages/usuarios/index.php');
+}else if($_SESSION['user_rol']=='administrador') {
+    header('Location: /pages/personal/index.php');
 }
+
+if (!is_null($_SESSION['Login']))
+    if ($_SESSION['Login']!='error')
+        $_SESSION['Login']='no-login';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
