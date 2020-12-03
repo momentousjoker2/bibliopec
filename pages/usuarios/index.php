@@ -1,20 +1,18 @@
 <?php
 session_start();
-/*s
 
+if($_SESSION['user_rol']!='Usuario'){
 
-if($_SESSION['user_rol']!='administrador'){
+    if($_SESSION['user_rol']=='administrador') {
 
-    if($_SESSION['user_rol']=='Usuario') {
-
-        header('Location: /pages/usuarios/index.php');
+        header('Location: /pages/personal/index.php');
 
     }else{
         $_SESSION['Login'] = 'error';
         header('Location: ../../index.php');
     }
 
-}*/
+}
 
 ?>
 <!DOCTYPE html>
@@ -48,11 +46,10 @@ if($_SESSION['user_rol']!='administrador'){
                        aria-expanded="false"> </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
-                            <p class="font-weight-light text-muted mb-0">Correo</p>
+                            <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION['user_name']; ?></p>
+                            <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION["user_ocupacion"]; ?></p>
                         </div>
-                        <a class="dropdown-item">Mi perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
-                        <a class="dropdown-item">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="/pages/php/logout.php">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
                     </div>
                 </li>
             </ul>
@@ -61,7 +58,7 @@ if($_SESSION['user_rol']!='administrador'){
             </button>
         </div>
     </nav>
-    <!--Menu inicio-->
+
     <div class="container-fluid page-body-wrapper">
         <nav class="sidebar " id="sidebar">
             <ul class="nav">
@@ -100,7 +97,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-talleres">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../usuarios/modificar.php">Modificar</a>
+                                <a class="nav-link" href="../usuarios/usuarios/usuarios.php">Perfil</a>
                             </li>
                         </ul>
                     </div>
@@ -109,13 +106,10 @@ if($_SESSION['user_rol']!='administrador'){
 
             </ul>
         </nav>
-        <!--Fin de menu creo-->
 
         <div class="main-panel">
             <div class="content-wrapper">
-                <div class="card">
 
-                </div>
             </div>
         </div>
     </div>
