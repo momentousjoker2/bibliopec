@@ -171,39 +171,39 @@
                     <form class="forms-sample" method="post" action="agregar.php">
                       <div class="form-row">
                 <div class="col-md-6 mb-3">
-                  <label for="validationDefault01">Nombre</label>
+                  <label for="validationDefault01">Nombre *</label>
                   <input type="text" class="form-control" name="Nombre" maxlength="15" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="validationDefault02">Apellidos</label>
+                  <label for="validationDefault02">Apellidos *</label>
                   <input type="text" class="form-control" name="Apellido" maxlength="15" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-5 mb-3">
                   <label for="validationDefault03">Domicilio</label>
-                  <input type="text" class="form-control" name="Domicilio" required maxlength="50">
+                  <input type="text" class="form-control" name="Domicilio" maxlength="50">
                 </div>
 				  <div class="col-md-4 mb-3">
                   <label for="validationDefault03">Ciudad</label>
-                  <input type="text" class="form-control" name="Ciudad" required maxlength="30"> 
+                  <input type="text" class="form-control" name="Ciudad" maxlength="30"> 
                 </div>
 				  <div class="col-md-1 mb-3">
                   <label for="validationDefault03">CP</label>
-                  <input type="text" class="form-control" name="CP" required maxlength="5">
+                  <input type="text" class="form-control" name="CP" maxlength="5">
                 </div></div>
 				<div class="form-row">
 				<div class="col-md-4 mb-3">
-                  <label for="validationDefault03">Contraseña</label>
-                  <input type="password" class="form-control" name="password" required maxlength="32">
+                  <label for="validationDefault03">Contraseña *</label>
+                  <input type="password" class="form-control" name="password" maxlength="32">
                 </div>
 				  <div class="col-md-3 mb-3">
-                  <label for="validationDefault03">Fecha de Nacimiento</label>
+                  <label for="validationDefault03">Fecha de Nacimiento *</label>
                   <input type="date" class="form-control" name="FechaNacimiento"  required >
                 </div>
 				<div class="col-md-4 mb-3">
                   <label for="validationDefault05">Género</label>
-                  <select class="custom-select" id="Genero" name="Genero" required>
+                  <select class="custom-select" id="Genero" name="Genero">
                     <option selected disabled value=""></option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
@@ -212,7 +212,7 @@
 				  <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault05">Grado de Estudios</label>
-                  <select class="custom-select" id="GradoEstudios" name="GradoEstudios" required>
+                  <select class="custom-select" id="GradoEstudios" name="GradoEstudios">
                     <option selected disabled value=""></option>
                     <option value="Preescolar">Preescolar</option>
                     <option value="Primaria">Primaria</option>
@@ -223,7 +223,7 @@
                 </div>
 				<div class="col-md-6 mb-3">
                   <label for="validationDefault03">Ocupación</label>
-                  <input type="text" class="form-control" name="Ocupacion" required maxlength="16">
+                  <input type="text" class="form-control" name="Ocupacion" maxlength="16">
                 </div>
 				
               </div>
@@ -268,7 +268,7 @@
 			}
 		  mysqli_close( $conn );
 
-          header('Location: /pages/personal/usuario/agregado.php?id='.$id);
+          header('Location: ./agregado.php?id='.$id);
 
 	  }
     

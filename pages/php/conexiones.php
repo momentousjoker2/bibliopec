@@ -1,5 +1,6 @@
 <?php
 $servername = "mysql-bibliopec.alwaysdata.net";
+//$servername = "localhost";
 $database = "bibliopec_db";
 $username = "bibliopec";
 $password = "3bcHABETUjkl";

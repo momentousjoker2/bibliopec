@@ -111,29 +111,15 @@ if($_SESSION['user_rol']!='Usuario'){
             <div class="content-wrapper">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Talleres</h4>
+                        <h4 class="card-title">Regristar Visita</h4>
                         <form class="forms-sample" method="post" action="./guardar.php">
-                            <div class="col-md-12 mb-3">
-                                <div class="form-group">
-                                    <label for="hora_llegada">Hora de llegada</label>
-                                    <input type="time" name="hora_llegada" class="form-control"  placeholder="0" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-                                </div>
 
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <div class="form-group">
-                                    <label for="hora_salida">Hora de salida</label>
-                                    <input type="time" name="hora_salida" class="form-control"  placeholder="0" autocomplete="off" style=" background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
-                                </div>
-                            </div>
                             <div class="col-md-12 mb-3">
                                 <label for="validationDefault06">Material</label>
                                 <select class="custom-select" id="validationDefault06" name="consulta" required>
-                                    <option selected disabled value=""></option>
-                                    <option value="Ninguna">Ninguna</option>
-                                    <option value="Consulta">Colección consulta</option>
-                                    <option value="General">Colección general</option>
-                                    <option value="Infantil">Colección infantil</option>
+                                    <option value="Consulta">consulta</option>
+                                    <option value="General">general</option>
+                                    <option value="Infantil">infantil</option>
                                 </select>
 
 

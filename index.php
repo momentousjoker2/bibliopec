@@ -60,17 +60,18 @@ if (!is_null($_SESSION['Login']))
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary submit-btn btn-block">Inicio sesion</button>
+                                <button class="btn btn-primary submit-btn btn-block">Inicio sesión</button>
                             </div>
                         </form>
                         <div id="idMensaje" style="display: <?php  if ($_SESSION['Login']=='error') {echo ";";} else {echo "none;"; }?>;" class="alert alert-danger my-3" role="alert">
                             <p>El Usuario y/o contraseña no es correcto.</p>
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-block g-login">
-                                <img class="mr-3"  alt="">Registrar
-                            </button>
-                        </div>
+                            <div class="form-group">
+                                <a href="pages/Regristrar/Regristrar.php">
+                                    <button type="submit" class="btn btn-block submit-btn g-login">
+                                        Registrar
+                                    </button>
+                                </a>
                     </div>
                 </div>
             </div>

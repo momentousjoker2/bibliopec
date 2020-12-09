@@ -109,6 +109,32 @@ if($_SESSION['user_rol']!='Usuario'){
 
         <div class="main-panel">
             <div class="content-wrapper">
+                <h1>Tus visitas</h1>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">idVisita</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Coleccion</th>
+                    </tr>
+                    </thead>
+                    <tbody id='tbody'>
+                    <?php
+                    include '../php/conexiones.php';
+
+                    $instruccion ="Select idVisitas, fecha, Hora, mConsulta from visitas  WHERE idUsuario=".$_SESSION['id_user'];
+
+                    $sql=mysqli_query($conn,$instruccion);
+                    while ($dat = mysqli_fetch_assoc($sql)) {
+
+                    echo '<tr><td>'.$dat['idVisitas'].'</td><td>'.$dat['fecha'].'</td><td>'.$dat['Hora'].'</td><td>'.$dat['mConsulta'];
+                    }
+
+                    ?>
+                    </tbody>
+                </table>
 
             </div>
         </div>
