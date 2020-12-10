@@ -5,15 +5,19 @@ session_start();
 include '../../../pages/php/conexiones.php';
 
 $idUsuario=$_SESSION['id_user'];
-$consulta = $_POST['consulta'];
-$hora_llegada = $_POST['hora_llegada'];
-$hora_salida = $_POST['hora_salida'];
+$mConsulta = $_POST['consulta'];
+
+$fecha = localtime(time(), true);
+$hora= localtime(time(), true);
+
+$hora=date('H:i');
+$fecha=date('Y-m-d');
 
 
-$insert = "INSERT INTO visitas(idUsuario,material,Hora_entrada,Hora_salida) VALUES (" . $idUsuario . ",'" . $consulta . "','" . $hora_llegada . "','" . $hora_salida . "')";
+$insert = "INSERT INTO visitas(idUsuario,fecha,hora,mConsulta) VALUES (" . $idUsuario . ",'" . $fecha . "','" . $hora . "','" . $mConsulta . "')";
 
 if (mysqli_query($conn, $insert)) {
-    header('Location: ./agregar.php');
+    header('Location: ../index.php');
 } else {
     echo 'Error Comunicate con el adminsitrador: ' . $insert . '<br>' . mysqli_error($conn);
 }

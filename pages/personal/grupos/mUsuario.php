@@ -1,9 +1,9 @@
 <?php
     include  '../../../pages/php/conexiones.php';
-    $instruccion = "Select idUsuario, nombre From usuarios";
+    $instruccion = "Select ID, Nombre From usuario";
     $sql=mysqli_query($conn,$instruccion);
     echo '<option selected disabled value=""></option>';
     while ($dat = mysqli_fetch_assoc($sql)) {
-        echo "<option value='$dat[idUsuario]'>".utf8_encode($dat['nombre']).'</option>';       
+        echo "<option value='$dat[ID]'>".$dat['Nombre'].'</option>';       
         }
 ?>

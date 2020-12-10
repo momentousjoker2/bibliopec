@@ -143,7 +143,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-grupos">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="agregar.php">Agregar</a>
+                                <a class="nav-link" href="../grupos/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../grupos/modificar.php">Modificar</a>
@@ -191,6 +191,8 @@ if($_SESSION['user_rol']!='administrador'){
                                             <select name="idTaller" class="form-control">
 
                                                 <?php
+                                                require '../../../pages/php/conexiones.php';
+
                                                 $querry = "Select idTaller, Nombre From talleres";
                                                 $sql = mysqli_query($conn, $querry);
                                                 while ($dat = mysqli_fetch_assoc($sql)) {

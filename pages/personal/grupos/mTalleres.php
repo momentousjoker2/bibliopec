@@ -5,6 +5,6 @@
     echo "<option selected disabled value=''></option> ";
     while ($dat = mysqli_fetch_assoc($sql)) {
         
-        echo "<option value='$dat[idTaller]'>".utf8_encode($dat['Nombre']).'</option>';       
+        echo "<option value='$dat[idTaller]'>".$dat['Nombre'].'</option>';       
         }
     ?>

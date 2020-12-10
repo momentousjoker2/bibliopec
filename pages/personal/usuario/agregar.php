@@ -268,7 +268,7 @@
 			}
 		  mysqli_close( $conn );
 
-          header('Location: /pages/personal/usuario/agregado.php?id='.$id);
+          header('Location: ./agregado.php?id='.$id);
 
 	  }
     

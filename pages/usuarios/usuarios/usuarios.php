@@ -118,7 +118,59 @@ if($_SESSION['user_rol']!='Usuario'){
         $querry = "Select * from usuario where ID=".$_SESSION['id_user'];
         $sql=mysqli_query($conn,$querry);
         $dat = mysqli_fetch_assoc($sql);
+        if ($dat['Genero']=='Masculino')
+            $sexo ="<option selected value='Masculino'>Masculino</option><option value='Masculino'>Femenino</option>";
+        else
+            $sexo ="<option value='Masculino'>Masculino</option><option selected value='Masculino'>Femenino</option>";
 
+
+        switch ($dat['GradoEstudios']){
+            case 'Preescolar':
+                $grado="
+                <option select value='Preescolar'>Preescolar</option>
+                <option value='Primaria'>Primaria</option>
+                <option value='Secundaria'>Secundaria</option>
+                <option value='Preparatoria'>Preparatoria</option>
+                <option value='Universidad'>Universidad</option>
+                ";
+                break;
+            case 'Primaria':
+                $grado="
+                <option value='Preescolar'>Preescolar</option>
+                <option selected value='Primaria'>Primaria</option>
+                <option value='Secundaria'>Secundaria</option>
+                <option value='Preparatoria'>Preparatoria</option>
+                <option value='Universidad'>Universidad</option>
+                ";
+                break;
+            case 'Secundaria':
+                $grado="
+                <option value='Preescolar'>Preescolar</option>
+                <option value='Primaria'>Primaria</option>
+                <option selected value='Secundaria'>Secundaria</option>
+                <option value='Preparatoria'>Preparatoria</option>
+                <option value='Universidad'>Universidad</option>
+                ";
+                break;
+            case 'Preparatoria':
+                $grado="
+                <option value='Preescolar'>Preescolar</option>
+                <option value='Primaria'>Primaria</option>
+                <option value='Secundaria'>Secundaria</option>
+                <option selected value='Preparatoria'>Preparatoria</option>
+                <option value='Universidad'>Universidad</option>
+                ";
+                break;
+            case 'Universidad':
+                $grado="
+                <option value='Preescolar'>Preescolar</option>
+                <option value='Primaria'>Primaria</option>
+                <option value='Secundaria'>Secundaria</option>
+                <option value='Preparatoria'>Preparatoria</option>
+                <option selected value='Universidad'>Universidad</option>
+                ";
+                break;
+        }
             echo '
   
                 <center>
@@ -130,6 +182,12 @@ if($_SESSION['user_rol']!='Usuario'){
                                     <div class="col-md-12 mb-3">
                                         <label for="validationDefault01">Nombre Completo</label>
                                         <input type="text" class="form-control" name="Nombre"  value="'.$dat['Nombre'].'" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationDefault01">Contraseña</label>
+                                        <input type="text" class="form-control" name="password"  value="'.$dat['password'].'" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -152,12 +210,16 @@ if($_SESSION['user_rol']!='Usuario'){
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDefault03">Grado de Estudios</label>
-                                            <input type="text" class="form-control" name="GradoEstudios"  required value="'.$dat['GradoEstudios'].'">
+                                             <select class="custom-select" id="validationDefault06" name="GradoEstudios" required ">
+                                                    '.$grado.'
+                                                </select>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDefault02">Genero</label>
-                                            
-                                            <input type="text" class="form-control" name="Genero" maxlength="30" required  value="'.$dat['Genero'].'">
+                                                
+                                                    <select class="custom-select" id="validationDefault06" name="Genero" required ">
+                                                    '.$sexo.'
+                                                </select>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="validationDefault02">Ocupacion</label>
