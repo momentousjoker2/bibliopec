@@ -171,39 +171,39 @@
                     <form class="forms-sample" method="post" action="agregar.php">
                       <div class="form-row">
                 <div class="col-md-6 mb-3">
-                  <label for="validationDefault01">Nombre</label>
+                  <label for="validationDefault01">Nombre *</label>
                   <input type="text" class="form-control" name="Nombre" maxlength="15" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="validationDefault02">Apellidos</label>
+                  <label for="validationDefault02">Apellidos *</label>
                   <input type="text" class="form-control" name="Apellido" maxlength="15" required>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-5 mb-3">
                   <label for="validationDefault03">Domicilio</label>
-                  <input type="text" class="form-control" name="Domicilio" required maxlength="50">
+                  <input type="text" class="form-control" name="Domicilio" maxlength="50">
                 </div>
 				  <div class="col-md-4 mb-3">
                   <label for="validationDefault03">Ciudad</label>
-                  <input type="text" class="form-control" name="Ciudad" required maxlength="30"> 
+                  <input type="text" class="form-control" name="Ciudad" maxlength="30"> 
                 </div>
 				  <div class="col-md-1 mb-3">
                   <label for="validationDefault03">CP</label>
-                  <input type="text" class="form-control" name="CP" required maxlength="5">
+                  <input type="text" class="form-control" name="CP" maxlength="5">
                 </div></div>
 				<div class="form-row">
 				<div class="col-md-4 mb-3">
-                  <label for="validationDefault03">Contraseña</label>
-                  <input type="password" class="form-control" name="password" required maxlength="32">
+                  <label for="validationDefault03">Contraseña *</label>
+                  <input type="password" class="form-control" name="password" maxlength="32">
                 </div>
 				  <div class="col-md-3 mb-3">
-                  <label for="validationDefault03">Fecha de Nacimiento</label>
+                  <label for="validationDefault03">Fecha de Nacimiento *</label>
                   <input type="date" class="form-control" name="FechaNacimiento"  required >
                 </div>
 				<div class="col-md-4 mb-3">
                   <label for="validationDefault05">Género</label>
-                  <select class="custom-select" id="Genero" name="Genero" required>
+                  <select class="custom-select" id="Genero" name="Genero">
                     <option selected disabled value=""></option>
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
@@ -212,7 +212,7 @@
 				  <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault05">Grado de Estudios</label>
-                  <select class="custom-select" id="GradoEstudios" name="GradoEstudios" required>
+                  <select class="custom-select" id="GradoEstudios" name="GradoEstudios">
                     <option selected disabled value=""></option>
                     <option value="Preescolar">Preescolar</option>
                     <option value="Primaria">Primaria</option>
@@ -223,7 +223,7 @@
                 </div>
 				<div class="col-md-6 mb-3">
                   <label for="validationDefault03">Ocupación</label>
-                  <input type="text" class="form-control" name="Ocupacion" required maxlength="16">
+                  <input type="text" class="form-control" name="Ocupacion" maxlength="16">
                 </div>
 				
               </div>
@@ -278,8 +278,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  </body>
-=======
+	</body></html>
+<!--=======
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -297,7 +297,7 @@
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:./partials/_navbar.html -->
+      <!-- partial:./partials/_navbar.html 
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
           <a class="navbar-brand brand-logo" href="/index.php">
@@ -326,7 +326,7 @@
         </div>
       </nav>
       <div class="container-fluid page-body-wrapper">
-        <!-- partial:./partials/_sidebar.html -->
+        <!-- partial:./partials/_sidebar.html 
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-category">Menú Principal</li>
@@ -530,4 +530,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
-</html>
+</html>-->

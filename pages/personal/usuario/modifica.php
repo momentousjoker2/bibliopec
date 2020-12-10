@@ -143,7 +143,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-grupos">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="agregar.php">Agregar</a>
+                                <a class="nav-link" href="../grupos/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../grupos/modificar.php">Modificar</a>
@@ -248,7 +248,7 @@ if($_SESSION['user_rol']!='administrador'){
                                     </div>
 									<div class="col-md-4 mb-3">
                                         <label for="validationDefault05">Género</label>
-                  						<select class="custom-select" id="Genero" name="Genero" required>
+                  						<select class="custom-select" id="Genero" name="Genero">
                     						<option selected disabled value="'.$Genero.'">'.$Genero.'</option>
                     						<option value="Masculino">Masculino</option>
                     						<option value="Femenino">Femenino</option>

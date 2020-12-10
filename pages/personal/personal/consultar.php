@@ -142,7 +142,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="collapse" id="ui-grupos">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="agregar.php">Agregar</a>
+                                <a class="nav-link" href="../grupos/agregar.php">Agregar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../grupos/modificar.php">Modificar</a>
@@ -318,7 +318,14 @@ if($_SESSION['user_rol']!='administrador'){
 
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Personal De Biblioteca</h>
+              <h4 class="card-title">Personal De Biblioteca</h4>
+			  <p class="card-description">Ingrese su CURP </p>
+              <form class="forms-sample" method="post" action="consultar.php">
+			  	<div class="form-row">
+					<div class="col-md-2 mb-3">
+						<button class="btn btn-primary" type="submit">Buscar</button>
+					</div>
+				</div>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">

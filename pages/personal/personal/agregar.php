@@ -14,6 +14,7 @@ if($_SESSION['user_rol']!='administrador'){
     }
 
 }
+ob_start();
 
 ?>
 <!DOCTYPE html>
@@ -143,7 +144,7 @@ if($_SESSION['user_rol']!='administrador'){
                   <div class="collapse" id="ui-grupos">
                       <ul class="nav flex-column sub-menu">
                           <li class="nav-item">
-                              <a class="nav-link" href="agregar.php">Agregar</a>
+                              <a class="nav-link" href="../grupos/agregar.php">Agregar</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="../grupos/modificar.php">Modificar</a>
@@ -190,7 +191,7 @@ if($_SESSION['user_rol']!='administrador'){
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Nombre</label>
+                      <label class="col-sm-3 col-form-label">Nombre *</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" name="Nombre" required maxlength="30">
                       </div>
@@ -198,7 +199,7 @@ if($_SESSION['user_rol']!='administrador'){
                   </div>
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Apellidos</label>
+                      <label class="col-sm-3 col-form-label">Apellidos *</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" name="Apellidos" required maxlength="30">
                       </div>
@@ -209,7 +210,7 @@ if($_SESSION['user_rol']!='administrador'){
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">CURP</label>
+                      <label class="col-sm-3 col-form-label">CURP *</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" name="CURP" id="CURP" required maxlength="18">
                       </div>
@@ -219,7 +220,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">RFC</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="RFC" required maxlength="13">
+                        <input type="text" class="form-control" name="RFC" maxlength="13">
                       </div>
                     </div>
                   </div>
@@ -228,7 +229,7 @@ if($_SESSION['user_rol']!='administrador'){
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label" for="fechainicio">Fecha de nacimiento</label>
+                      <label class="col-sm-3 col-form-label" for="fechainicio">Fecha de Nacimiento *</label>
                       <div class="col-sm-9">
                         <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaNac" required>
                       </div>
@@ -241,7 +242,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Fecha de inicio laborar</label>
                       <div class="col-sm-9">
-                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaInicioL" required>
+                        <input type="date" class="form-control" autocomplete="off" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" name="FechaInicioL">
                       </div>
                     </div>
                   </div>
@@ -249,24 +250,24 @@ if($_SESSION['user_rol']!='administrador'){
 
                 <div class="form-group">
                   <label for="nombre-taller">Dirección</label>
-                  <input type="text" class="form-control" autocomplete="off" name="Dirección" required maxlength="50">
+                  <input type="text" class="form-control" autocomplete="off" name="Direccion" maxlength="50">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Ciudad </label>
-                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" required maxlength="30">
+                  <input type="text" class="form-control" autocomplete="off" name="Ciudad" maxlength="30">
                 </div>
 				  
 				<div class="row">
                   <div class="col-md-5">
                     <div class="form-group row">
-                      <label class="col-md-3 col-form-label">Contraseña</label>
+                      <label class="col-md-3 col-form-label">Contraseña *</label>
                       <div class="col-md-4">
                         <input type="password" class="form-control" name="Pass" id="Pass" required maxlength="32">
                       </div>
                     </div>
 					<div class="form-group row">
-                      <label class="col-md-3 col-form-label">Repetir Contraseña</label>
+                      <label class="col-md-3 col-form-label">Repetir Contraseña *</label>
                       <div class="col-md-4">
                         <input type="password" class="form-control" name="Pass2" id="Pass2" required maxlength="32">
                       </div>
@@ -276,7 +277,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">CP</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CP" required maxlength="5">
+                        <input type="text" class="form-control" name="CP" maxlength="5">
                       </div>
                     </div>
                   </div>
@@ -284,12 +285,12 @@ if($_SESSION['user_rol']!='administrador'){
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono fijo </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" required maxlength="10">
+                  <input type="tel" class="form-control" autocomplete="off" name="Telefono" maxlength="10">
                 </div>
 
                 <div class="form-group">
                   <label for="nombre-taller">Teléfono celular </label>
-                  <input type="tel" class="form-control" autocomplete="off" name="Celular" required maxlength="10">
+                  <input type="tel" class="form-control" autocomplete="off" name="Celular" maxlength="10">
                 </div>
 
                 <div class="row">
@@ -297,7 +298,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de entrada</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control" name="HEntrada" required>
+                        <input type="time" class="form-control" name="HEntrada">
                       </div>
                     </div>
                   </div>
@@ -305,7 +306,7 @@ if($_SESSION['user_rol']!='administrador'){
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Hora de salida</label>
                       <div class="col-sm-9">
-                        <input type="time" class="form-control" name="HSalida" required>
+                        <input type="time" class="form-control" name="HSalida">
                       </div>
                     </div>
                   </div>
@@ -371,7 +372,12 @@ if($_SESSION['user_rol']!='administrador'){
 		  $sql = "INSERT INTO personal (`Nombre`, `password`, `Apellido`, `Fecha_Nac`, `RFC`, `CURP`, `Domicilio`, `Ciudad`, `Codigo_Postal`, `Telefono`, `Fecha_Inicio`, `Celular`, `Hora_entrada`, `Hora_salida`) VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m','$n')";
 		  mysqli_query( $conn, $sql );
 		  mysqli_close( $conn );
-          header('Location: /pages/personal/personal/agregar.php');
+
+
+
+          header("Location: ./consultar.php");
+
+
 	  }
 	  ?>
   </div>
