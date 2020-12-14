@@ -33,32 +33,35 @@ if($_SESSION['user_rol']!='administrador'){
 </head>
 <body>
 <div class="container-scroller">
-  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-      <a class="navbar-brand brand-logo" href="../index.php">
-        <img src="/assets/images/logo.svg" alt="logo"/> </a>
-      <a class="navbar-brand brand-logo-mini" href="../index.php">
-        <img src="/assets/images/logo-mini.svg" alt="logo"/> </a>
-    </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-          <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
-             aria-expanded="false"> </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-            <div class="dropdown-header text-center">
-              <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION['user_name']; ?></p>
-              <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION["user_curp"]; ?></p>
-            </div>
-            <a class="dropdown-item" href="/pages/php/logout.php">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
-          </div>
-        </li>
-      </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-        <span class="mdi mdi-menu"></span>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a class="navbar-brand brand-logo" href="/index.php">
+                <img src="/assets/images/logo.svg" alt="logo"/> </a>
+            <a class="navbar-brand brand-logo-mini" href="/index.php">
+                <img src="/assets/images/logo-mini.svg" alt="logo"/> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-cog"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                            <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION['user_name']; ?></p>
+                            <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION["user_curp"]; ?></p>
+                        </div>
+                        <a class="dropdown-item" href="/pages/extra/Programador.php">Manual de programador<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="/pages/extra/Cliente.php">Manual de Usuario<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="#" onclick="alert('Datos de programadores \n Emmanuel Camarena Becerra \n Manuel Everardo Figueroa García \n Jessica Jazmin Gonzalez Romero \n Cristian Emmanuel Amezcua Moreno');">Datos de programador</a>
+                        <a class="dropdown-item" href="/pages/php/logout.php">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
+
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
 
   <div class="container-fluid page-body-wrapper">
     <nav class="sidebar " id="sidebar">
@@ -239,6 +242,8 @@ if($_SESSION['user_rol']!='administrador'){
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
     crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/78cdf3c4d1.js" crossorigin="anonymous"></script>
+
 </body>
 <script>
   

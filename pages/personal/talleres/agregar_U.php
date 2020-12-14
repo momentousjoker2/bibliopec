@@ -5,10 +5,10 @@ $idUsuario=$_POST['idEmpleado'];
 
 
 
-$insert="INSERT INTO grupos_alumnos( idGrupo, idUsuario) VALUES ('".$idTaller."','".$idUsuario."')";
+$insert="INSERT INTO InsertarAtaller( idTaller, idUsuario) VALUES ('".$idTaller."','".$idUsuario."')";
 
 if (mysqli_query($conn, $insert)) {
-    header('Location: ./consultar.php');
+    header('Location: ./consultarUpT.php');
 } else {
     echo 'Error: ' . $insert . '<br>' . mysqli_error($conn);
 }

@@ -43,15 +43,17 @@ if($_SESSION['user_rol']!='administrador'){
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
-                       aria-expanded="false"> </a>
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-cog"></i></a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
-                            <p class="mb-1 mt-3 font-weight-semibold">Usuario</p>
-                            <p class="font-weight-light text-muted mb-0">Correo</p>
+                            <p class="mb-1 mt-3 font-weight-semibold"><?php echo $_SESSION['user_name']; ?></p>
+                            <p class="font-weight-light text-muted mb-0"><?php echo $_SESSION["user_curp"]; ?></p>
                         </div>
-                        <a class="dropdown-item">Mi perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
-                        <a class="dropdown-item">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="/pages/extra/Programador.php">Manual de programador<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="/pages/extra/Cliente.php">Manual de Usuario<i class="dropdown-item-icon ti-power-off"></i></a>
+                        <a class="dropdown-item" href="#" onclick="alert('Datos de programadores \n Emmanuel Camarena Becerra \n Manuel Everardo Figueroa García \n Jessica Jazmin Gonzalez Romero \n Cristian Emmanuel Amezcua Moreno');">Datos de programador</a>
+                        <a class="dropdown-item" href="/pages/php/logout.php">Cerrar Sesión<i class="dropdown-item-icon ti-power-off"></i></a>
+
                     </div>
                 </li>
             </ul>

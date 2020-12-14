@@ -35,9 +35,9 @@ if($_SESSION['user_rol']!='administrador'){
 <div class="container-scroller">
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-            <a class="navbar-brand brand-logo" href="../index.php">
+            <a class="navbar-brand brand-logo" href="/index.php">
                 <img src="/assets/images/logo.svg" alt="logo"/> </a>
-            <a class="navbar-brand brand-logo-mini" href="../index.php">
+            <a class="navbar-brand brand-logo-mini" href="/index.php">
                 <img src="/assets/images/logo-mini.svg" alt="logo"/> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -113,7 +113,7 @@ if($_SESSION['user_rol']!='administrador'){
                                 <a class="nav-link" href="../talleres/consultar.php">Consultar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
+                                <a class="nav-link" href="../talleres/Agregar_Usarios.php">Agregar Usuarios</a>
                             </li>
                         </ul>
                     </div>
@@ -178,114 +178,94 @@ if($_SESSION['user_rol']!='administrador'){
             </ul>
         </nav>
 
-      <div class="main-panel">
-        <div class="content-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
 
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Consultar visitas</h4>
-              <form class="forms-sample" id='formulario'>
-                <div class="form-row">
-                  <div class="col-md-3 mb-3">
-                    <label for="validationDefault04">Mes</label>
-                    <select class="custom-select" id="validationDefault04" name="mes" required>
-                      <option selected disabled value="">...</option>
-                      <option>Enero</option>
-                      <option>Febrero</option>
-                      <option>Marzo</option>
-                      <option>Abril</option>
-                      <option>Mayo</option>
-                      <option>Junio</option>
-                      <option>Julio</option>
-                      <option>Agosto</option>
-                      <option>Septiembre</option>
-                      <option>Octubre</option>
-                      <option>Noviembre</option>
-                      <option>Diciembre</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="validationDefault05">Años</label>
-                    <select class="custom-select" id="validationDefault05" name="ann" required>
-                      <option selected disabled value="">...</option>
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <h4 class="card-title">CONSULTAR USUARIOS POR GRUPOS</h4>
+                        </center>
+                        <form class="forms-sample" id='formulario'>
+                            <div class="form-row">
 
-                    </select>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="validationDefault03" style="opacity: 0;">l</label><br>
-                    <button class="btn btn-primary" type="submit" id="btnBuscar">Buscar Visita</button>
-                  </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationDefault05">Grupos</label>
+                                    <select class="custom-select" id="validationDefault05" name="idTaller" required>
+                                        <?php
+                                        require '../../../pages/php/conexiones.php';
+
+                                        $querry = "Select idTaller, Nombre From talleres";
+                                        $sql = mysqli_query($conn, $querry);
+                                        while ($dat = mysqli_fetch_assoc($sql)) {
+                                            echo "<option value='$dat[idTaller]'>" . $dat['Nombre']  . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationDefault03" style="opacity: 0;">l</label><br>
+                                    <button class="btn btn-primary" type="submit" id="btnBuscar">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Nombre del taller</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Genero</th>
+                                <th scope="col">Escolaridad</th>
+                                <th scope="col">Ocupación</th>
+                            </tr>
+                            </thead>
+                            <tbody id='tbody'>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-              </form>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">idVisita</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Hora</th>
-                    <th scope="col">Coleccion</th>
-                    <th scope="col">idUsuario</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Escolaridad</th>
-                    <th scope="col">Ocupacion</th>
-                    <th scope="col">Genero</th>
-                  </tr>
-                </thead>
-                <tbody id='tbody'>
 
-                </tbody>
-              </table>
             </div>
-          </div>
-        </div>
 
-        <footer class="footer">
-          <div class="container-fluid clearfix">
+            <footer class="footer">
+                <div class="container-fluid clearfix">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 All rights
               reserved.</span>
-          </div>
-        </footer>
-      </div>
+                    </span>
+                </div>
+            </footer>
+        </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"> </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-    crossorigin="anonymous"> </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-    crossorigin="anonymous"> </script>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/78cdf3c4d1.js" crossorigin="anonymous"></script>
 
 </body>
 <script>
-  const valor = new Date().getFullYear()
-  var op = document.getElementById('validationDefault05');
+    var formulario = document.getElementById('formulario');
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var datos = new FormData(formulario);
+        fetch('conUpT.php', {
+            method: 'POST',
+            body: datos
+        })
+            .then(response => response.text())
+            .then(data => {
 
-  for (let i = 2000; i <= valor; i++) {
-    let option = document.createElement('option');
-    option.value = i;
-    option.text = i;
-    op.appendChild(option);
-  }
-
-  var formulario = document.getElementById('formulario');
-  formulario.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var datos = new FormData(formulario);
-    fetch('./datos.php', {
-      method: 'POST',
-      body: datos
-    })
-      .then(response => response.text())
-      .then(data => {
-
-        var tb = document.getElementById('tbody');
-        tb.innerHTML = data;
-      });
-  });
+                var tb = document.getElementById('tbody');
+                tb.innerHTML = data;
+            });
+    });
 </script>
 
 </html>
