@@ -6,6 +6,7 @@ include '../../../pages/php/conexiones.php';
 
 $idUsuario=$_SESSION['id_user'];
 $mConsulta = $_POST['consulta'];
+date_default_timezone_set('America/Mexico_City');
 
 $fecha = localtime(time(), true);
 $hora= localtime(time(), true);
